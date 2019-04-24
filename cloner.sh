@@ -11,6 +11,9 @@ clone_if_not_exist() {
 
 echo "Cloning all of the repos we work on..."
 
+mkdir /root/workspace
+mkdir /root/go/
+
 # base16-shell: For the porple
 clone_if_not_exist "https://github.com/chriskempson/base16-shell" "${HOME}/.config/base16-shell"
 
