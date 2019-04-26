@@ -54,7 +54,7 @@ clone_if_not_exist "https://github.com/cloudfoundry/nats-release" "${GOPATH}/src
 clone_if_not_exist "https://github.com/cloudfoundry/istio-acceptance-tests" "${GOPATH}/src/code.cloudfoundry.org/istio-acceptance-tests"
 
 # Istio Release: BOSH release used to deploy Istio, Envoy, Copilot
-clone_if_not_exist "https://github.com/cloudfoundry/istio-release" "${GOPATH}/src/code.cloudfoundry.org/istio-release"
+clone_if_not_exist "https://github.com/cloudfoundry/istio-release" "${HOME}/workspace/istio-release"
 
 # Istio Workspace: Use this if you want to work outside of your GOPATH and spin up a Vagrant VM for testing (see istio_docker())
 clone_if_not_exist "https://github.com/cloudfoundry/istio-workspace" "${HOME}/workspace/istio-workspace"
@@ -132,5 +132,20 @@ clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-helpers" "${HO
 
 # # PKS Networking Env Metadata -- env info for pivotal ci
 # clone_if_not_exist "git@github.com:pivotal/pks-networking-env-metadata" "${GOPATH}/src/github.com/pivotal/pks-networking-env-metadata"
+
+cd root/workspace
+
+# direnv allow all releases
+for direnvable in $(find . | grep envrc | sed -e 's/.\/\(.*\)\/.envrc/\1/'); do
+  cd $direnvable
+  direnv allow
+  cd ..
+done
+
+for release in $(find . | grep "scripts/update$" | sed -e 's/.\/\(.*\)\/scripts\/update/\1/'); do
+  cd $release
+  ./scripts/update
+  cd ..
+done
 
 exit 0
