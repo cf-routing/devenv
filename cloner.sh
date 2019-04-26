@@ -18,10 +18,10 @@ mkdir /root/go/
 clone_if_not_exist "https://github.com/chriskempson/base16-shell" "${HOME}/.config/base16-shell"
 
 # # Deployments Routing:  Pipelines, environment info, helpful scripts
-# clone_if_not_exist "git@github.com:cloudfoundry/deployments-routing" "${HOME}/workspace/deployments-routing"
+clone_if_not_exist "https://393bb0ee73ba2ffc7323c2fb166e05a590bb3b57@github.com/cloudfoundry/deployments-routing" "${HOME}/workspace/deployments-routing"
 
 # # CF Networking Deployments: Private manifests and credentials for C2C CI
-# clone_if_not_exist "git@github.com:cloudfoundry/cf-networking-deployments" "${HOME}/workspace/cf-networking-deployments"
+clone_if_not_exist "https://393bb0ee73ba2ffc7323c2fb166e05a590bb3b57@github.com/cloudfoundry/cf-networking-deployments" "${HOME}/workspace/cf-networking-deployments"
 
 # # Routing Datadog Config: Configure your Data üê∂
 # clone_if_not_exist "git@github.com:cloudfoundry/routing-datadog-config" "${HOME}/workspace/routing-datadog-config"
