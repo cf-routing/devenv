@@ -749,3 +749,4 @@ function random_theme(){
   _base16 "/Users/pivotal/.config/base16-shell/scripts/${random_theme}" $(basename ${random_theme#"base16-"} .sh)
 }
 
+eval "$(direnv hook bash)"

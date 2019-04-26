@@ -7,6 +7,7 @@ git clone https://github.com/luan/nvim.git ~/.config/nvim
 
 nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
+nvim +GoInstallBinaries +qall
 
 #tmuxfiles
 wget -O - https://raw.githubusercontent.com/luan/tmuxfiles/master/install | bash

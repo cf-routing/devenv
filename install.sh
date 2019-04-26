@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
 apt-get install apt-utils
-apt-get install -yq git software-properties-common curl apt-transport-https lsb-release gpg asciidoc aria2 autoconf automake awscli bash-completion tmux wget npm
+apt-get install -yq git software-properties-common curl apt-transport-https lsb-release gpg asciidoc aria2 autoconf automake awscli bash-completion tmux wget npm direnv
 
 #add repos
 add-apt-repository ppa:gophers/archive
@@ -21,6 +21,13 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 apt-get update
 
 # install the rest
-apt-get install -yq neovim golang-1.11-go azure-cli #fasd
+apt-get install -yq neovim azure-cli #fasd
+
+# install golang the right way
+mkdir -p /tmp/installscratch
+cd /tmp/installscratch
+wget https://dl.google.com/go/go1.12.2.linux-amd64.tar.gz
+tar -xvf go1.12.2.linux-amd64.tar.gz
+mv go /usr/local
 
 

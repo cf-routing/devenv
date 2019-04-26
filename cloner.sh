@@ -17,20 +17,20 @@ mkdir /root/go/
 # base16-shell: For the porple
 clone_if_not_exist "https://github.com/chriskempson/base16-shell" "${HOME}/.config/base16-shell"
 
-# Deployments Routing:  Pipelines, environment info, helpful scripts
-clone_if_not_exist "git@github.com:cloudfoundry/deployments-routing" "${HOME}/workspace/deployments-routing"
+# # Deployments Routing:  Pipelines, environment info, helpful scripts
+# clone_if_not_exist "git@github.com:cloudfoundry/deployments-routing" "${HOME}/workspace/deployments-routing"
 
-# CF Networking Deployments: Private manifests and credentials for C2C CI
-clone_if_not_exist "git@github.com:cloudfoundry/cf-networking-deployments" "${HOME}/workspace/cf-networking-deployments"
+# # CF Networking Deployments: Private manifests and credentials for C2C CI
+# clone_if_not_exist "git@github.com:cloudfoundry/cf-networking-deployments" "${HOME}/workspace/cf-networking-deployments"
 
-# Routing Datadog Config: Configure your Data üê∂
-clone_if_not_exist "git@github.com:cloudfoundry/routing-datadog-config" "${HOME}/workspace/routing-datadog-config"
+# # Routing Datadog Config: Configure your Data üê∂
+# clone_if_not_exist "git@github.com:cloudfoundry/routing-datadog-config" "${HOME}/workspace/routing-datadog-config"
 
-# Routing Team Checklists: Checklists (on-call, onboarding) and a kind of helpful wiki
-clone_if_not_exist "git@github.com:cloudfoundry/routing-team-checklists" "${HOME}/workspace/routing-team-checklists"
+# # Routing Team Checklists: Checklists (on-call, onboarding) and a kind of helpful wiki
+# clone_if_not_exist "git@github.com:cloudfoundry/routing-team-checklists" "${HOME}/workspace/routing-team-checklists"
 
-# Networking Program Checklists: Checklists (on-call, onboarding) and a kind of helpful wiki
-clone_if_not_exist "git@github.com:cloudfoundry/networking-program-checklists" "${HOME}/workspace/networking-program-checklists"
+# # Networking Program Checklists: Checklists (on-call, onboarding) and a kind of helpful wiki
+# clone_if_not_exist "git@github.com:cloudfoundry/networking-program-checklists" "${HOME}/workspace/networking-program-checklists"
 
 # Bosh Deployment: We usually use this to bump golang in our releases
 clone_if_not_exist "https://github.com/cloudfoundry/bosh-deployment" "${HOME}/workspace/bosh-deployment"
@@ -116,21 +116,21 @@ clone_if_not_exist "https://github.com/cloudfoundry/silk" "${GOPATH}/src/code.cl
 # Cf Networking Helpers: Helpers for running tests?
 clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-helpers" "${HOME}/workspace/cf-networking-helpers"
 
-# Pivotal Only ==============================================================================================
+# # Pivotal Only ==============================================================================================
 
-# Routing Support Notes: List of support tickets, past and present, and a handy template to start your own.
-clone_if_not_exist "git@github.com:pivotal/routing-support-notes" "${HOME}/workspace/routing-support-notes"
+# # Routing Support Notes: List of support tickets, past and present, and a handy template to start your own.
+# clone_if_not_exist "git@github.com:pivotal/routing-support-notes" "${HOME}/workspace/routing-support-notes"
 
-# Scripts for generating Istio config for PKS Routing
-clone_if_not_exist "git@github.com:pivotal/k8s-istio-resource-generator" "${GOPATH}/src/github.com/pivotal/k8s-istio-resource-generator"
+# # Scripts for generating Istio config for PKS Routing
+# clone_if_not_exist "git@github.com:pivotal/k8s-istio-resource-generator" "${GOPATH}/src/github.com/pivotal/k8s-istio-resource-generator"
 
-# PKS Service Mesh repo
-clone_if_not_exist "git@github.com:pivotal/pks-service-mesh" "${GOPATH}/src/github.com/pivotal/pks-service-mesh"
+# # PKS Service Mesh repo
+# clone_if_not_exist "git@github.com:pivotal/pks-service-mesh" "${GOPATH}/src/github.com/pivotal/pks-service-mesh"
 
-# Pivotal Networking CI -- pipeline and tasks for pivotal ci
-clone_if_not_exist "git@github.com:pivotal/pivotal-networking-ci" "${GOPATH}/src/github.com/pivotal/pivotal-networking-ci"
+# # Pivotal Networking CI -- pipeline and tasks for pivotal ci
+# clone_if_not_exist "git@github.com:pivotal/pivotal-networking-ci" "${GOPATH}/src/github.com/pivotal/pivotal-networking-ci"
 
-# PKS Networking Env Metadata -- env info for pivotal ci
-clone_if_not_exist "git@github.com:pivotal/pks-networking-env-metadata" "${GOPATH}/src/github.com/pivotal/pks-networking-env-metadata"
+# # PKS Networking Env Metadata -- env info for pivotal ci
+# clone_if_not_exist "git@github.com:pivotal/pks-networking-env-metadata" "${GOPATH}/src/github.com/pivotal/pks-networking-env-metadata"
 
 exit 0
