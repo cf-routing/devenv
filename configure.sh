@@ -11,3 +11,6 @@ nvim +GoInstallBinaries +qall
 
 #tmuxfiles
 wget -O - https://raw.githubusercontent.com/luan/tmuxfiles/master/install | bash
+
+rm ~/.bash_profile
+ln -s ~/workspace/devenv/profile ~/.bash_profile

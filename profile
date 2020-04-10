@@ -5,6 +5,7 @@ main() {
     alias vim=nvim
     alias vi=nvim
     alias ll="ls -al"
+    alias ls="ls --color"
     alias be="bundle exec"
     alias bake="bundle exec rake"
     alias drm='docker rm $(docker ps -a -q)'
@@ -26,6 +27,7 @@ main() {
     alias t="target"
 
     alias rg="ag"
+    alias fd="fdfind"
 
     alias h?="history | grep"
     alias chg="credhub_get"
@@ -45,7 +47,7 @@ main() {
     export GIT_DUET_ROTATE_AUTHOR=1
 
     # setup path
-    export PATH=$GOPATH/bin:$PATH:/usr/local/go/bin:$HOME/scripts:$HOME/workspace/routing-ci/scripts:/usr/ocal/opt/apr/bin:/usr/local/opt/apr-util/bin
+    export PATH=$GOPATH/bin:$PATH:/usr/local/go/bin:$HOME/scripts:$HOME/workspace/networking-workspace/scripts:$HOME/workspace/routing-ci/scripts:/usr/ocal/opt/apr/bin:/usr/local/opt/apr-util/bin:$HOME/.rbenv/bin
     export EDITOR=nvim
   }
 
@@ -95,6 +97,10 @@ main() {
     [ -f ~/.fzf.bash ] && source ~/.fzf.bash
   }
 
+  setup_rvm() {
+    source /usr/local/rvm/scripts/rvm
+  }
+
   local dependencies
     dependencies=(
         aliases
@@ -105,6 +111,7 @@ main() {
         bosh_env_scripts
         ssh_agent
         fzf
+        rvm
       )
 
   for dependency in ${dependencies[@]}; do
