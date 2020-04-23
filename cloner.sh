@@ -130,6 +130,9 @@ clone_if_not_exist "git@github.com:GoogleCloudPlatform/istio-samples.git" "${HOM
 # CF K8S Networking
 clone_if_not_exist "https://github.com/cloudfoundry/cf-k8s-networking" "${HOME}/workspace/cf-k8s-networking"
 
+# CF for K8s
+clone_if_not_exist "https://github.com/cloudfoundry/cf-for-k8s" "${HOME}/workspace/cf-for-k8s"
+
 # Eirini
 clone_if_not_exist "https://github.com/cloudfoundry-incubator/eirini" "${HOME}/workspace/eirini"
 
@@ -170,17 +173,30 @@ clone_if_not_exist "git@github.com:pivotal-legacy/pivotal_ide_prefs.git" "${HOME
 
 cd ~/workspace
 
-# direnv allow all releases
+echo "direnv allow all releases for all repos"
 for direnvable in $(find . | grep envrc | sed -e 's/.\/\(.*\)\/.envrc/\1/'); do
-  cd $direnvable
+  pushd $direnvable
   direnv allow
-  cd ..
+  popd
 done
 
+echo "scripts update all repos"
 for release in $(find . | grep "scripts/update$" | sed -e 's/.\/\(.*\)\/scripts\/update/\1/'); do
-  cd $release
+  pushd $release
   ./scripts/update
-  cd ..
+  popd
 done
+
+
+echo "Symlink the git-authors file to .git-authors..."
+ln -sf ${HOME}/workspace/networking-workspace/git-authors ${HOME}/.git-authors
+
+echo "Copy the gitconfig file into ~/.gitconfig..."
+cp -rf ${HOME}/workspace/networking-workspace/gitconfig ${HOME}/.gitconfig
+
+echo "updating all git repos to use 'git co-author'"
+git solo as # HACK: if not set to anything git duet fails in the following commands
+export GIT_DUET_CO_AUTHORED_BY=1
+find ~/workspace/ -type d -name '.git' -exec sh -c 'cd {} && cd .. && git duet > /dev/null && git init' \;
 
 exit 0
