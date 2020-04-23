@@ -131,6 +131,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 EDITOR=nvim
 
+eval $(ssh-agent)
+
 serve() {
   docker run -p 1234:80 \
     -h web \
@@ -138,7 +140,7 @@ serve() {
     jorgeandrada/nginx-autoindex
 }
 
-export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/
+export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/:$HOME/workspace/networking-workspace/scripts/
 export PATH=$PATH:$HOME/.istioctl/bin
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

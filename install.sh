@@ -25,6 +25,7 @@ apt-get install -yq \
   fd-find \
   git \
   gpg \
+  lastpass-cli \
   libffi-dev \
   libgdbm-dev \
   libncurses5-dev \
