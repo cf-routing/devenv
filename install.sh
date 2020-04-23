@@ -25,6 +25,7 @@ apt-get install -yq \
   fd-find \
   git \
   gpg \
+  jq \
   lastpass-cli \
   libffi-dev \
   libgdbm-dev \
