@@ -140,10 +140,22 @@ serve() {
     jorgeandrada/nginx-autoindex
 }
 
+trim() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    printf '%s' "$var"
+}
+
 # git prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
   source $HOME/.bash-git-prompt/gitprompt.sh
 fi
+function prompt_callback {
+  echo " (`trim $(cat ~/.gitconfig | grep initials | sed -En 's/.* (\w*)/\1/p' | tr '\n' ' ')`)"
+}
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/:$HOME/workspace/networking-workspace/scripts/
