@@ -22,6 +22,7 @@ apt-get install -yq \
   build-essential \
   curl \
   direnv \
+  docker.io \
   fd-find \
   git \
   gpg \
