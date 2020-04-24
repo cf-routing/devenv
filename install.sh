@@ -117,3 +117,6 @@ mv kubectl /usr/local/bin/kubectl
 
 # the correct yq
 pip3 install yq neovim
+
+# k14s
+curl -L https://k14s.io/install.sh | bash
