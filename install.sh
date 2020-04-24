@@ -91,8 +91,8 @@ popd
 # cf
 mkdir /tmp/cf
 pushd /tmp/cf
-  wget -O cf "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=6.51.0&source=github-rel"
-  chmod +x cf
+  curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
+  curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
   mv cf /usr/local/bin
 popd
 
