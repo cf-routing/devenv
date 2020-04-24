@@ -87,6 +87,7 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export GIT_DUET_CO_AUTHORED_BY=1
+export GIT_DUET_GLOBAL=1
 export EDITOR=nvim
 
 # some more ls aliases
@@ -131,8 +132,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 EDITOR=nvim
 
-eval $(ssh-agent)
-
 serve() {
   docker run -p 1234:80 \
     -h web \
@@ -140,6 +139,7 @@ serve() {
     jorgeandrada/nginx-autoindex
 }
 
+export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/:$HOME/workspace/networking-workspace/scripts/
 export PATH=$PATH:$HOME/.istioctl/bin
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

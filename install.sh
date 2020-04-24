@@ -117,5 +117,10 @@ wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=lin
 chmod +x fly
 mv fly /usr/local/bin
 
+# kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mv kubectl /usr/local/bin/kubectl
+
 # the correct yq
 pip3 install yq neovim
