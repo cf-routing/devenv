@@ -11,3 +11,4 @@ home directory as a non-root user:
 bash <(curl -s https://raw.githubusercontent.com/XanderStrike/devenv/master/setup.sh)
 ```
 
+Note that this script is not guaranteed to be idempotent. Rather than re-running the scripts, it is recommended that you recreate your workstation VMs regularly to keep up to date.
