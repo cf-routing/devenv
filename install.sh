@@ -124,3 +124,10 @@ curl -L https://k14s.io/install.sh | bash
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings --completion --no-update-rc
+
+# istioctl
+mkdir /tmp/istio
+pushd /tmp/istio
+  curl -L https://istio.io/downloadIstio | sh -
+  sudo mv istio-*/bin/istioctl /usr/local/bin
+popd
