@@ -42,6 +42,7 @@ apt-get install -yq \
   silversearcher-ag \
   software-properties-common \
   tmux \
+  tree \
   wget \
   zlib1g-dev \
 
