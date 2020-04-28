@@ -20,6 +20,7 @@ apt-get install -yq \
   bash-completion \
   bison \
   build-essential \
+  cowsay \
   curl \
   direnv \
   docker.io \
