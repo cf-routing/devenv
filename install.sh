@@ -24,6 +24,7 @@ apt-get install -yq \
   curl \
   direnv \
   docker.io \
+  fasd \
   fd-find \
   git \
   gpg \
@@ -52,7 +53,7 @@ sudo ln -s $(which fdfind) /usr/bin/fd
 apt-get update
 
 # install the rest
-apt-get install -yq azure-cli #fasd
+apt-get install -yq azure-cli
 
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
