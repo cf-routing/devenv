@@ -163,7 +163,5 @@ export PATH=$PATH:$HOME/.istioctl/bin
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# ssh-agent
-eval $(ssh-agent) > /dev/null
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
