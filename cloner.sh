@@ -71,7 +71,7 @@ clone_if_not_exist "git@github.com:cloudfoundry/networking-oss-deployments.git" 
 clone_if_not_exist "git@github.com:pivotal/routing-support-notes" "${HOME}/workspace/routing-support-notes"
 
 # Pivotal Networking CI -- pipeline and tasks for pivotal ci
-clone_if_not_exist "git@github.com:pivotal/pivotal-networking-ci" "${GOPATH}/src/github.com/pivotal/pivotal-networking-ci"
+clone_if_not_exist "git@github.com:pivotal/pivotal-networking-ci" "${HOME}/workspace/pivotal-networking-ci"
 
 # Norsk Config -- for OSL
 clone_if_not_exist "git@github.com:pivotal-cf/norsk-config" "${HOME}/workspace/norsk-config"
