@@ -13,5 +13,5 @@ export GIT_DUET_GLOBAL=1
 export GIT_DUET_ROTATE_AUTHOR=1
 find ~/workspace/ -type d -name '.git' -exec sh -c 'cd {} && cd .. && git init' \;
 
-git config --global url."git@github.com:".insteadOf "https://github.com/"
+git config --global url."git@github.com:".pushInsteadOf "https://github.com/"
 
