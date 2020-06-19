@@ -1,5 +1,8 @@
 #!/bin/bash
 
+alias watch="watch " # enables alias expansion for commands in watch
+                     # i.e. `watch k get pods` will now work
+
 alias vim=nvim
 alias vi=nvim
 
