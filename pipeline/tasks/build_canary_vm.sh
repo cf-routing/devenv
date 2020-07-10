@@ -14,7 +14,8 @@ echo "Deleting the Canary instance"
 gcloud compute instances delete canary \
   --delete-disks=all \
   --project cf-routing \
-  --zone us-central1-a
+  --zone us-central1-a \
+  --quiet
 
 echo "Creating Canary"
 gcloud compute instances create canary \
