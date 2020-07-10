@@ -3,8 +3,6 @@ groups:
 - name: build-canary
   jobs:
   - build-canary-vm
-- name: workstations
-  jobs:
   - ant
   - bee
   - dodo
@@ -12,6 +10,15 @@ groups:
   - fox
 
 resources:
+- name: saturday-night-fever
+  type: time
+  icon: clock
+  source:
+    location: America/Los_Angeles
+    start: 6:00 PM
+    stop: 6:01 PM
+    days: [Saturday]
+
 - name: devenv
   type: git
   icon: github-box
@@ -25,6 +32,8 @@ jobs:
   plan:
     - in_parallel:
       - get: devenv
+      - get: saturday-night-fever
+        trigger: true
     - task: build-vm
       file: devenv/pipeline/tasks/build_canary_vm.yml
       params:
