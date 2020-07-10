@@ -6,7 +6,9 @@ set -euo pipefail
 : "${GCP_SERVICE_ACCOUNT_KEY:?}"
 
 echo "Authorizing with GCP..."
-gcloud auth activate-service-account --key-file=<(echo "${GCP_SERVICE_ACCOUNT_KEY}") --project="${GCP_PROJECT}" 1>/dev/null 2>&1
+gcloud auth activate-service-account \
+  --key-file=<(echo "${GCP_SERVICE_ACCOUNT_KEY}") \
+  --project="cf-routing" 1>/dev/null 2>&1
 
 echo "Installing devenv..."
 gcloud beta compute ssh --zone "us-central1-a" "pivotal@canary" --project "cf-routing" \
