@@ -1,0 +1,14 @@
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: relintdockerhubpushbot/cf-for-k8s-ci
+
+inputs:
+  - name: devenv
+
+run:
+  path: devenv/pipeline/tasks/build_canary_vm.sh
+
+params:
+  GCP_SERVICE_ACCOUNT_KEY:

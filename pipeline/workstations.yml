@@ -1,0 +1,32 @@
+---
+groups:
+- name: build-canary
+  jobs:
+  - build-canary-vm
+
+resources:
+- name: devenv
+  type: git
+  icon: github-box
+  source:
+    uri: git@github.com:cf-routing/devenv
+    private_key: ((github_private_key.private_key))
+    branch: develop
+
+jobs:
+- name: build-canary-vm
+  plan:
+    - in_parallel:
+      - get: devenv
+    - task: build-vm
+      file: devenv/pipeline/tasks/build_canary_vm.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+    - task: install-devenv
+      file: devenv/pipeline/tasks/install_devenv.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+    - task: capture-image
+      file: devenv/pipeline/tasks/capture_image.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
