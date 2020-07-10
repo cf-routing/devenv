@@ -3,7 +3,7 @@
 mkdir workspace
 cd workspace
 echo "Cloning the devenv scripts"
-git clone https://github.com/XanderStrike/devenv.git
+git clone https://github.com/cf-routing/devenv.git
 
 cd devenv
 echo "Installing required packages and tools, you may be prompted for your sudo password."
