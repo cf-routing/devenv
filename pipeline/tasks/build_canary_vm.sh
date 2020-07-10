@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 # ENV
 : "${GCP_SERVICE_ACCOUNT_KEY:?}"
 
@@ -16,6 +14,10 @@ gcloud compute instances delete canary \
   --project cf-routing \
   --zone us-central1-a \
   --quiet
+
+echo "If you just saw a 'not found' error that's ok"
+
+set -euo pipefail
 
 echo "Creating Canary"
 gcloud compute instances create canary \
