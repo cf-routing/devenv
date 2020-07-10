@@ -44,11 +44,11 @@ jobs:
       - get: devenv
         passed: [build-canary-vm]
         trigger: true
-      - task: build-workstation
-        file: devenv/pipeline/tasks/build_workstation.yml
-        params:
-          GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
-          WORKSTATION_NAME: ant
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: ant
 
 - name: bee
   plan:
@@ -56,11 +56,11 @@ jobs:
       - get: devenv
         passed: [build-canary-vm]
         trigger: true
-      - task: build-workstation
-        file: devenv/pipeline/tasks/build_workstation.yml
-        params:
-          GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
-          WORKSTATION_NAME: bee
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: bee
 
 - name: dodo
   plan:
@@ -68,11 +68,11 @@ jobs:
       - get: devenv
         passed: [build-canary-vm]
         trigger: true
-      - task: build-workstation
-        file: devenv/pipeline/tasks/build_workstation.yml
-        params:
-          GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
-          WORKSTATION_NAME: dodo
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: dodo
 
 - name: elk
   plan:
@@ -80,11 +80,11 @@ jobs:
       - get: devenv
         passed: [build-canary-vm]
         trigger: true
-      - task: build-workstation
-        file: devenv/pipeline/tasks/build_workstation.yml
-        params:
-          GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
-          WORKSTATION_NAME: elk
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: elk
 
 - name: fox
   plan:
@@ -92,8 +92,8 @@ jobs:
       - get: devenv
         passed: [build-canary-vm]
         trigger: true
-      - task: build-workstation
-        file: devenv/pipeline/tasks/build_workstation.yml
-        params:
-          GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
-          WORKSTATION_NAME: fox
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: fox
