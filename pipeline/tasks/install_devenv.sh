@@ -12,4 +12,5 @@ gcloud auth activate-service-account \
 
 echo "Installing devenv..."
 gcloud beta compute ssh --zone "us-central1-a" "pivotal@canary" --project "cf-routing" \
-  --command "bash <(curl -s https://raw.githubusercontent.com/cf-routing/devenv/develop/setup.sh)"
+  --command "bash <(curl -s https://raw.githubusercontent.com/cf-routing/devenv/develop/setup.sh)" \
+  --quiet
