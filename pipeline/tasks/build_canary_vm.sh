@@ -6,7 +6,9 @@ set -euo pipefail
 : "${GCP_SERVICE_ACCOUNT_KEY:?}"
 
 echo "Authorizing with GCP..."
-gcloud auth activate-service-account --key-file=<(echo "${GCP_SERVICE_ACCOUNT_KEY}") --project="${GCP_PROJECT}" 1>/dev/null 2>&1
+gcloud auth activate-service-account \
+  --key-file=<(echo "${GCP_SERVICE_ACCOUNT_KEY}") \
+  --project="cf-routing" 1>/dev/null 2>&1
 
 echo "Deleting the Canary instance"
 gcloud compute instances delete canary \
