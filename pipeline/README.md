@@ -22,7 +22,13 @@ that.
 When rolling a workstation, note that it will get the most recent devenv image,
 not the most recent changes in github.
 
-## adding a new workstation
+## adding a new workstation to the pipeline
 
 To add a new environment, simply copy an existing workstation job, change the
 name in both places, and set the pipeline. The name scheme is animals.
+
+## manually creating a one-off worksatation
+
+You can run `tasks/build_workstation.sh` to provision a one-off workstation. This 
+is a real quick (under 2 minutes) way to get up and running, but keep in mind
+they won't be updated or managed by the pipeline.
