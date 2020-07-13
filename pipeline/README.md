@@ -1,4 +1,4 @@
-# workstation pipeline
+# Workstation pipeline
 
 ![pipeline](https://imgur.com/oJ9dy2A.png)
 
@@ -13,7 +13,7 @@ passes, it rolls all the other environments.
 We roll environments weekly to discourage saving data to, playing favorites
 with, or otherwise customizing workstations.
 
-## manually rolling a workstation
+## Manually rolling a workstation
 
 It should always be safe to re-run the job that created a given workstation, but
 manually triggering `build-canary-vm` will call environments to roll so don't do
@@ -22,13 +22,20 @@ that.
 When rolling a workstation, note that it will get the most recent devenv image,
 not the most recent changes in github.
 
-## adding a new workstation to the pipeline
+## Adding a new workstation to the pipeline
 
 To add a new environment, simply copy an existing workstation job, change the
 name in both places, and set the pipeline. The name scheme is animals.
 
-## manually creating a one-off worksatation
+## Manually creating a one-off worksatation
 
 You can run `tasks/build_workstation.sh` to provision a one-off workstation. This 
 is a real quick (under 2 minutes) way to get up and running, but keep in mind
 they won't be updated or managed by the pipeline.
+
+## Connecting to a workstation
+
+Use the following command to connect to a workstation:
+```
+gcloud compute ssh --zone "us-central1-a"  --project "cf-routing" pivotal@$workstationname
+```
