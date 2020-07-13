@@ -154,6 +154,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # istioctl
 mkdir /tmp/istio
 pushd /tmp/istio
-  curl -L https://istio.io/downloadIstio | sh -
+  curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.4 sh -
   sudo mv istio-*/bin/istioctl /usr/local/bin
 popd
