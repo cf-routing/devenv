@@ -108,6 +108,13 @@ url=$(curl -s https://api.github.com/repos/cloudfoundry/bosh-cli/releases | jq -
   mv bosh /usr/local/bin/
 popd
 
+# bbl
+bbl_version="8.4.0"
+wget https://github.com/cloudfoundry/bosh-bootloader/releases/download/v${bbl_version}/bbl-v${bbl_version}_linux_x86-64 -P /tmp && \
+mv /tmp/bbl-* /usr/local/bin/bbl && \
+cd /usr/local/bin && \
+chmod +x bbl
+
 # fly
 wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=linux"
 chmod +x fly
