@@ -108,6 +108,16 @@ url=$(curl -s https://api.github.com/repos/cloudfoundry/bosh-cli/releases | jq -
   mv bosh /usr/local/bin/
 popd
 
+# k9s
+mkdir /tmp/k9s
+pushd /tmp/k9s
+url=$(curl -s https://api.github.com/repos/derailed/k9s/releases | jq -r '.[0].assets[] | select(.name | contains("Linux_x86_64")).browser_download_url')
+  wget -O k9s.tar.gz "$url"
+  tar -xvf k9s.tar.gz
+  chmod +x k9s
+  mv k9s /usr/local/bin/
+popd
+
 # bbl
 bbl_version="8.4.0"
 wget https://github.com/cloudfoundry/bosh-bootloader/releases/download/v${bbl_version}/bbl-v${bbl_version}_linux_x86-64 -P /tmp && \
