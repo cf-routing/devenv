@@ -20,8 +20,9 @@ repository for automated workstation provisioning.
 
 ## Contributing
 
-Please commit small improvements directly to `develop`. If you want others to
-weigh in first, open a pull request
+Please commit small improvements directly to `develop`.
+
+If you a want others to weigh in first, open a pull request.
 
 Goals:
 
