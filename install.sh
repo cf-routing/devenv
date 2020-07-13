@@ -115,6 +115,12 @@ mv /tmp/bbl-* /usr/local/bin/bbl && \
 cd /usr/local/bin && \
 chmod +x bbl
 
+#credhub cli
+credhub_cli_version="2.7.0"
+wget https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/${credhub_cli_version}/credhub-linux-${credhub_cli_version}.tgz -P /tmp && \
+tar xzvf /tmp/credhub-linux-${credhub_cli_version}.tgz -C /usr/local/bin && \
+chmod +x /usr/local/bin/credhub
+
 # fly
 wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=linux"
 chmod +x fly
