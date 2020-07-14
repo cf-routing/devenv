@@ -1,6 +1,6 @@
 # devenv
 
-A set of scripts for configuring a ubuntu machine (or docker image) for development of Cloud Foundry stuff.
+A set of scripts for configuring a ubuntu machine for development of Cloud Foundry stuff.
 
 ## Installation
 
@@ -11,7 +11,8 @@ home directory as a non-root user:
 bash <(curl -s https://raw.githubusercontent.com/cf-routing/devenv/develop/setup.sh)
 ```
 
-Note that this script is not guaranteed to be idempotent. Rather than re-running the scripts, it is recommended that you recreate your workstation VMs regularly to keep up to date.
+Note that this script is not guaranteed to be idempotent. Rather than re-running the scripts,
+it is recommended that you recreate your workstation VMs regularly to keep up to date.
 
 ## Automated workstation provisioning
 
