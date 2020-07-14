@@ -16,7 +16,7 @@ resources:
   source:
     location: America/Los_Angeles
     start: 6:00 PM
-    stop: 6:01 PM
+    stop: 6:10 PM
     days: [Saturday]
 
 - name: devenv
