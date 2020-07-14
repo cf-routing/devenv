@@ -40,6 +40,6 @@ Non-goals:
   We don't care if the setup scripts are idempotent because we are prioritizing
   making it easy to throw away machines and create new ones.
 * Supporting users outside of the Networking Program \
-  We don't want to get bogged down over engineering this thing oand trying to
+  We don't want to get bogged down over engineering this thing and trying to
   meet everyone's needs. If other teams in the larger CF community find this
   userful, they can fork it.
