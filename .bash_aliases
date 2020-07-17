@@ -13,5 +13,8 @@ alias gap="git add -p"
 alias diff="diff --color"
 
 alias kis="kubectl -n istio-system"
+complete -F __start_kubectl kis
 alias kcf="kubectl -n cf-system"
+complete -F __start_kubectl kcf
 alias kw="kubectl -n cf-workloads"
+complete -F __start_kubectl kw
