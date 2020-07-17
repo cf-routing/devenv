@@ -37,7 +37,7 @@ clone_if_not_exist "https://github.com/cloudfoundry/cf-deployment" "${HOME}/work
 # CF Deployment Concourse Tasks: We use it to deploy Concourses
 clone_if_not_exist "https://github.com/cloudfoundry/cf-deployment-concourse-tasks" "${HOME}/workspace/cf-deployment-concourse-tasks"
 
-# CF Acceptance Test: 🐱 🐱  or CATS. Happy path integration tests for CF
+# CF Acceptance Tests: 🐱 🐱 or CATS. Happy path integration tests for CF
 clone_if_not_exist "https://github.com/cloudfoundry/cf-acceptance-tests" "${GOPATH}/src/code.cloudfoundry.org/cf-acceptance-tests"
 
 # NATS Release: Inherited from Release Integration. We now own this release, which deploys NATS, which is used in CF
@@ -48,6 +48,24 @@ clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-release" "${HO
 
 # Routing Release: BOSH Release home to the Gorouter, TCP router, and a bunch of other routing related things. Spelunk! Refactor!
 clone_if_not_exist "https://github.com/cloudfoundry/routing-release" "${HOME}/workspace/routing-release"
+
+# Silk release: BOSH Release of the Silk CNI plugin
+clone_if_not_exist "https://github.com/cloudfoundry/silk-release" "${HOME}/workspace/silk-release"
+
+# Silk: home to Silk and its components (silk-controller, silk-daemon and silk-cni)
+clone_if_not_exist "https://github.com/cloudfoundry/silk" "${HOME}/workspace/silk"
+
+# Route Registrar: broadcasts routes to the gorouter
+clone_if_not_exist "https://github.com/cloudfoundry/route-registrar" "${HOME}/workspace/route-registrar"
+
+# Routing API: interface for registering and deregistering routes for internal & external clients
+clone_if_not_exist "https://github.com/cloudfoundry/routing-api" "${HOME}/workspace/routing-api"
+
+# Application Connectivity Decision Repo contains a list of decision records made by the App Connectivity team
+clone_if_not_exist "git@github.com:pivotal/application-connectivity-decision-repo" "${HOME}/workspace/application-connectivity-decision-repo"
+
+# Routing Acceptance Tests
+clone_if_not_exist "https://github.com/cloudfoundry/routing-acceptance-tests" "${HOME}/workspace/routing-acceptance-tests"
 
 # CF K8S Networking
 clone_if_not_exist "https://github.com/cloudfoundry/cf-k8s-networking" "${HOME}/workspace/cf-k8s-networking"
