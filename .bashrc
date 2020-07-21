@@ -172,5 +172,16 @@ forever() {
   done
 }
 
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+  CfTarget="\$(cf-target 2> /dev/null)"
+  GoBoshTarget="\${BOSH_ENV}"
+  KubeCluster="\$(kubectl config current-context 2> /dev/null)"
+  Color="\033[0;38;5;148m"
+  GIT_PROMPT_START_USER="\n${Color}bosh: ${GoBoshTarget} | ☸️ : ${KubeCluster} | cf: ${CfTarget} (\h) ${ResetColor}\n${Yellow}${PathShort}${ResetColor}"
+  GIT_PROMPT_END_ROOT="\n# "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
