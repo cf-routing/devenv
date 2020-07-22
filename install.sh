@@ -41,6 +41,7 @@ apt-get install -yq \
   npm \
   python3-pip \
   ripgrep \
+  ruby-dev \
   silversearcher-ag \
   software-properties-common \
   tmux \
@@ -166,3 +167,6 @@ popd
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
 chmod +x ./kind
 mv ./kind /usr/local/bin/kind
+
+# uaac
+sudo gem install cf-uaac

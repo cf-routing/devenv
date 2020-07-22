@@ -172,4 +172,7 @@ forever() {
   done
 }
 
+# Add all our custom functions
+source ~/workspace/devenv/functions/*
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -12,6 +12,8 @@ alias gap="git add -p"
 
 alias diff="diff --color"
 
+alias t="target"
+
 alias kis="kubectl -n istio-system"
 complete -F __start_kubectl kis
 alias kcf="kubectl -n cf-system"
