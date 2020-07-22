@@ -60,6 +60,24 @@ apt-get install -yq azure-cli
 
 # install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
+source "$HOME/.asdf/asdf.sh"
+
+# install asdf packages
+plugins=(
+'kustomize'
+)
+
+for plugin in ${plugins[*]}
+do
+  asdf plugin-add "${plugin}"
+done
+
+for plugin in ${plugins[*]}
+do
+  asdf install "${plugin}" latest
+  version=$(asdf list "${plugin}")
+  echo "${plugin} ${version}" >> "$HOME/.tool-versions"
+done
 
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
