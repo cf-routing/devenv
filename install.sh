@@ -39,6 +39,7 @@ apt-get install -yq \
   lsb-release \
   mosh \
   npm \
+  openconnect \
   python3-pip \
   ripgrep \
   ruby-dev \
