@@ -6,6 +6,7 @@ groups:
   - ant
   - bee
   - dodo
+  - dog
   - elk
   - fox
 
@@ -83,6 +84,18 @@ jobs:
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
         WORKSTATION_NAME: dodo
+
+- name: dog
+  plan:
+    - in_parallel:
+      - get: devenv
+        passed: [build-canary-vm]
+        trigger: true
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: dog
 
 - name: elk
   plan:
