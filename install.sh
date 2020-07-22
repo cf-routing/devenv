@@ -37,6 +37,7 @@ apt-get install -yq \
   libssl-dev \
   libyaml-dev \
   lsb-release \
+  mosh \
   npm \
   python3-pip \
   ripgrep \
