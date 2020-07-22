@@ -13,6 +13,10 @@ nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
 nvim +GoInstallBinaries +qall
 
+# Custom Nvim config
+rm ~/.config/nvim/user/after.vim
+ln -s $(pwd)/nvim-after.vim ~/.config/nvim/user/after.vim
+
 #tmuxfiles
 wget -O - https://raw.githubusercontent.com/luan/tmuxfiles/master/install | bash
 
