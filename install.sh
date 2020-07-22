@@ -58,6 +58,9 @@ apt-get update
 # install the rest
 apt-get install -yq azure-cli
 
+# install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
+
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
 chmod +x nvim.appimage

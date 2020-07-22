@@ -6,6 +6,9 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# asdf
+[[ -s "$HOME/.asdf/asdf.sh" ]] && source "$HOME/.asdf/asdf.sh"
+
 # Only set the ssh_auth_sock when not using ssh agent forwarding
 if [[ -z "${SSH_AUTH_SOCK}" ]]; then
       # always use the same ssh-agent
