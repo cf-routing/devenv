@@ -21,6 +21,8 @@ rm ~/.bash_aliases ~/.bash_logout ~/.bash_profile ~/.bashrc ~/.profile
 ln -s $(pwd)/.bash* ~/
 ln -s $(pwd)/.inputrc ~/
 ln -s $(pwd)/.profile ~/
+ln -s $(pwd)/.git-prompt-colors.sh ~/
 
 # fly aliases
 ln -s ~/workspace/networking-workspace/flyrc ~/.flyrc
+

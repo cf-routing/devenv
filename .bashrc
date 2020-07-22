@@ -152,10 +152,10 @@ trim() {
 # git prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
   source $HOME/.bash-git-prompt/gitprompt.sh
+  export GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
+  export GIT_PROMPT_ONLY_IN_REPO=0
+  export GIT_PROMPT_THEME="Custom"
 fi
-function prompt_callback {
-  echo " (`trim $(cat ~/.gitconfig | grep initials | sed -En 's/.* (\w*)/\1/p' | tr '\n' ' ')`)"
-}
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/:$HOME/workspace/networking-workspace/scripts/
@@ -176,12 +176,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     source $HOME/.bash-git-prompt/gitprompt.sh
 fi
-
-  CfTarget="\$(cf-target 2> /dev/null)"
-  GoBoshTarget="\${BOSH_ENV}"
-  KubeCluster="\$(kubectl config current-context 2> /dev/null)"
-  Color="\033[0;38;5;148m"
-  GIT_PROMPT_START_USER="\n${Color}bosh: ${GoBoshTarget} | ☸️ : ${KubeCluster} | cf: ${CfTarget} (\h) ${ResetColor}\n${Yellow}${PathShort}${ResetColor}"
-  GIT_PROMPT_END_ROOT="\n# "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
