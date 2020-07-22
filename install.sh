@@ -65,6 +65,7 @@ source "$HOME/.asdf/asdf.sh"
 # install asdf packages
 plugins=(
 'kustomize'
+'kind'
 )
 
 for plugin in ${plugins[*]}
@@ -184,11 +185,6 @@ pushd /tmp/istio
   curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.4 sh -
   sudo mv istio-*/bin/istioctl /usr/local/bin
 popd
-
-# kind
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.8.1/kind-$(uname)-amd64
-chmod +x ./kind
-mv ./kind /usr/local/bin/kind
 
 # uaac
 sudo gem install cf-uaac
