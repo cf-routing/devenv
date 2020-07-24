@@ -57,8 +57,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -70,8 +68,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -83,8 +79,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -96,8 +90,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -109,8 +101,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -122,8 +112,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -135,8 +123,6 @@ jobs:
     - in_parallel:
       - get: saturday-night-fever
         trigger: true
-      - get: devenv
-        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
