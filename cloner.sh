@@ -62,7 +62,7 @@ clone_if_not_exist "https://github.com/cloudfoundry/route-registrar" "${HOME}/wo
 clone_if_not_exist "https://github.com/cloudfoundry/routing-api" "${HOME}/workspace/routing-api"
 
 # Application Connectivity Decision Repo contains a list of decision records made by the App Connectivity team
-clone_if_not_exist "git@github.com:pivotal/application-connectivity-decision-repo" "${HOME}/workspace/application-connectivity-decision-repo"
+clone_if_not_exist "git@github.com:pivotal/tas-for-vms-networking-decisions.git" "${HOME}/workspace/tas-for-vms-networking-decisions"
 
 # Routing Acceptance Tests
 clone_if_not_exist "https://github.com/cloudfoundry/routing-acceptance-tests" "${HOME}/workspace/routing-acceptance-tests"
