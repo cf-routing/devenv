@@ -28,3 +28,20 @@ gcloud compute instances create ${WORKSTATION_NAME} \
   --image devenv --image-project cf-routing \
   --boot-disk-type pd-ssd \
   --boot-disk-size 250GB
+
+domain="${MACHINE_NAME}.ws.routing.lol"
+external_static_ip=$(gcloud compute instances list | grep ${MACHINE_NAME} | awk '{print $5}')
+
+echo "Configuring DNS for external IP: ${external_static_ip}"
+gcloud dns record-sets transaction start --project cf-routing --zone="routing-lol"
+gcp_records_json="$( gcloud dns record-sets list --project cf-routing --zone "routing-lol" --name "${domain}" --format=json )"
+record_count="$( echo "${gcp_records_json}" | jq 'length' )"
+if [ "${record_count}" != "0" ]; then
+  existing_record_ip="$( echo "${gcp_records_json}" | jq -r '.[0].rrdatas | join(" ")' )"
+  gcloud dns record-sets transaction remove --project cf-routing --name "${domain}" --type=A --zone="routing-lol" --ttl=300 "${existing_record_ip}" --verbosity=debug
+fi
+gcloud dns record-sets transaction add --project cf-routing --name "${domain}" --type=A --zone="routing-lol" --ttl=300 "${external_static_ip}" --verbosity=debug
+
+echo "Contents of transaction.yaml:"
+cat transaction.yaml
+gcloud dns record-sets transaction execute --project cf-routing --zone="routing-lol" --verbosity=debug
