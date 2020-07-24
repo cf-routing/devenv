@@ -29,8 +29,8 @@ gcloud compute instances create ${WORKSTATION_NAME} \
   --boot-disk-type pd-ssd \
   --boot-disk-size 250GB
 
-domain="${MACHINE_NAME}.ws.routing.lol"
-external_static_ip=$(gcloud compute instances list | grep ${MACHINE_NAME} | awk '{print $5}')
+domain="${WORKSTATION_NAME}.ws.routing.lol"
+external_static_ip=$(gcloud compute instances list | grep ${WORKSTATION_NAME} | awk '{print $5}')
 
 echo "Configuring DNS for external IP: ${external_static_ip}"
 gcloud dns record-sets transaction start --project cf-routing --zone="routing-lol"
