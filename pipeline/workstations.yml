@@ -2,9 +2,10 @@
 groups:
 - name: build-canary
   jobs:
-  - build-canary-vm
+  - build-image
   - ant
   - bee
+  - canary
   - dodo
   - dog
   - elk
@@ -29,14 +30,13 @@ resources:
     branch: develop
 
 jobs:
-- name: build-canary-vm
+- name: build-image
   plan:
     - in_parallel:
       - get: devenv
-      - get: saturday-night-fever
         trigger: true
     - task: build-vm
-      file: devenv/pipeline/tasks/build_canary_vm.yml
+      file: devenv/pipeline/tasks/build_image_vm.yml
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
     - task: install-devenv
@@ -52,9 +52,10 @@ jobs:
 - name: ant
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -64,21 +65,36 @@ jobs:
 - name: bee
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
         WORKSTATION_NAME: bee
 
+- name: canary
+  plan:
+    - in_parallel:
+      - get: saturday-night-fever
+        trigger: true
+      - get: devenv
+        passed: [build-image]
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: canary
+
 - name: dodo
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -88,9 +104,10 @@ jobs:
 - name: dog
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -100,9 +117,10 @@ jobs:
 - name: elk
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
@@ -112,9 +130,10 @@ jobs:
 - name: fox
   plan:
     - in_parallel:
-      - get: devenv
-        passed: [build-canary-vm]
+      - get: saturday-night-fever
         trigger: true
+      - get: devenv
+        passed: [build-image]
     - task: build-workstation
       file: devenv/pipeline/tasks/build_workstation.yml
       params:
