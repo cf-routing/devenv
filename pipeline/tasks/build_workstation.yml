@@ -4,9 +4,6 @@ image_resource:
   source:
     repository: relintdockerhubpushbot/cf-for-k8s-ci
 
-inputs:
-  - name: devenv
-
 run:
   path: devenv/pipeline/tasks/build_workstation.sh
 
