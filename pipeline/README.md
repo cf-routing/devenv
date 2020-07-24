@@ -7,20 +7,14 @@ This folder describes a pipeline (visible
 that automatically creates/recreates workstation environments for the Cloud
 Foundry App Connectivity Program.
 
-It first creates a Canary VM and attempts to install devenv to it. If this
-passes, it rolls all the other environments.
-
-We roll environments weekly to discourage saving data to, playing favorites
-with, or otherwise customizing workstations.
+It builds a new base image every time a new commit is pushed to devenv. Then on
+saturday nights, all the workstations roll getting the new image.
 
 ## Manually rolling a workstation
 
-It should always be safe to re-run the job that created a given workstation, but
-manually triggering `build-canary-vm` will call environments to roll so don't do
-that.
-
-When rolling a workstation, note that it will get the most recent devenv image,
-not the most recent changes in github.
+At any time, you can trigger your workstation's job in the pipeline to get the
+latest changes from devenv. It takes under a minute, but keep in mind any
+changes on that machine will be lost.
 
 ## Adding a new workstation to the pipeline
 
@@ -29,9 +23,12 @@ name in both places, and set the pipeline. The name scheme is animals.
 
 ## Manually creating a one-off worksatation
 
-You can run `tasks/build_workstation.sh` to provision a one-off workstation. This 
-is a real quick (under 2 minutes) way to get up and running, but keep in mind
-they won't be updated or managed by the pipeline.
+1. Navigate to the compute instances page in the GCP console
+1. Select an existing workstation and select "Create Similar" at the top
+1. Choose a name you like, make any other changes you need
+   * _Note:_ Make sure the boot disk image is `devenv` from the cf-routing
+     project
+1. Hit create!
 
 ## Connecting to a workstation
 
