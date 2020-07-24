@@ -12,3 +12,4 @@ run:
 
 params:
   GCP_SERVICE_ACCOUNT_KEY:
+  MACHINE_NAME:

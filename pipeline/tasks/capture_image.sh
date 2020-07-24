@@ -4,6 +4,7 @@ set -euo pipefail
 
 # ENV
 : "${GCP_SERVICE_ACCOUNT_KEY:?}"
+: "${MACHINE_NAME:?}"
 
 echo "Authorizing with GCP..."
 gcloud auth activate-service-account \
@@ -11,8 +12,8 @@ gcloud auth activate-service-account \
   --project="cf-routing" 1>/dev/null 2>&1
 
 
-echo "Stopping Canary..."
-gcloud compute instances stop canary --zone us-central1-a
+echo "Stopping ${MACHINE_NAME}..."
+gcloud compute instances stop ${MACHINE_NAME} --zone us-central1-a
 
 echo "Deleting the old image"
 gcloud compute images delete devenv --quiet
@@ -20,8 +21,12 @@ gcloud compute images delete devenv --quiet
 echo "Capturing image..."
 # https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#gcloud
 gcloud compute images create devenv \
-  --source-disk canary \
+  --source-disk ${MACHINE_NAME} \
   --source-disk-zone us-central1-a
 
-echo "Starting canary back up..."
-gcloud compute instances start canary --zone us-central1-a
+echo "Deleting ${MACHINE_NAME} instance..."
+gcloud compute instances delete ${MACHINE_NAME} \
+  --delete-disks=all \
+  --project cf-routing \
+  --zone us-central1-a \
+  --quiet
