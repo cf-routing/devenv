@@ -8,7 +8,7 @@ inputs:
   - name: devenv
 
 run:
-  path: devenv/pipeline/tasks/build_canary_vm.sh
+  path: devenv/pipeline/tasks/build_image_vm.sh
 
 params:
   GCP_SERVICE_ACCOUNT_KEY:

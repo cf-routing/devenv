@@ -39,14 +39,17 @@ jobs:
       file: devenv/pipeline/tasks/build_image_vm.yml
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        MACHINE_NAME: image-vm
     - task: install-devenv
       file: devenv/pipeline/tasks/install_devenv.yml
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        MACHINE_NAME: image-vm
     - task: capture-image
       file: devenv/pipeline/tasks/capture_image.yml
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        MACHINE_NAME: image-vm
 
 # WORKSTATIONS
 - name: ant
