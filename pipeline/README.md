@@ -1,7 +1,5 @@
 # Workstation pipeline
 
-![pipeline](https://imgur.com/oJ9dy2A.png)
-
 This folder describes a pipeline (visible
 [here](https://networking.ci.cf-app.com/teams/cf-k8s/pipelines/workstations))
 that automatically creates/recreates workstation environments for the Cloud
