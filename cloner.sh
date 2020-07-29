@@ -100,6 +100,12 @@ clone_if_not_exist "git@github.com:pivotal-cf/norsk.git" "${HOME}/workspace/nors
 # Istio Envoy OSL scripts
 clone_if_not_exist "git@github.com:pivotal/istio-envoy-osl.git" "${HOME}/workspace/istio-envoy-osl"
 
+# App connectivy bot (Slackbot to nudge NSX-T questions to be asked elsewhere)
+clone_if_not_exist "git@github.com:pivotal/app-connectivity-program-slackbot.git" "${HOME}/workspace/app-connectivity-program-slackbot"
+
+# Community bot (script to get recently updated Github issues)
+clone_if_not_exist "git@github.com:cf-routing/community-bot.git" "${HOME}/workspace/community-bot"
+
 cd ~/workspace
 
 echo "direnv allow all releases for all repos"
