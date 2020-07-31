@@ -21,11 +21,9 @@ ln -s $(pwd)/nvim-after.vim ~/.config/nvim/user/after.vim
 wget -O - https://raw.githubusercontent.com/luan/tmuxfiles/master/install | bash
 
 # install bash profile
+shopt -s dotglob
 rm ~/.bash_aliases ~/.bash_logout ~/.bash_profile ~/.bashrc ~/.profile
-ln -s $(pwd)/.bash* ~/
-ln -s $(pwd)/.inputrc ~/
-ln -s $(pwd)/.profile ~/
-ln -s $(pwd)/.git-prompt-colors.sh ~/
+ln -s $(pwd)/dotfiles/* ~/
 
 # fly aliases
 ln -s ~/workspace/networking-workspace/flyrc ~/.flyrc
