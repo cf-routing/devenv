@@ -168,8 +168,8 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
 chmod +x ./kubectl
 mv kubectl /usr/local/bin/kubectl
 
-# the correct yq
-pip3 install yq neovim
+# pip3 things
+pip3 install yq neovim when-changed
 
 # k14s
 curl -L https://k14s.io/install.sh | bash
