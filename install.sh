@@ -77,7 +77,7 @@ for plugin in ${plugins[*]}
 do
   asdf install "${plugin}" latest
   version=$(asdf list "${plugin}")
-  echo "${plugin} ${version}" >> "$HOME/.tool-versions"
+  echo "${plugin} ${version}" >> "/home/pivotal/.tool-versions"
 done
 
 # neovim
