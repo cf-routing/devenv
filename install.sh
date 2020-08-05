@@ -169,3 +169,11 @@ popd
 
 # uaac
 sudo gem install cf-uaac
+
+# kiln
+mkdir -p /tmp/kiln
+pushd /tmp/kiln
+  url=$(curl -s https://api.github.com/repos/pivotal-cf/kiln/releases | jq -r '.[0].assets[] | select((.name | contains("linux")) and (.name | contains("tar"))).browser_download_url')
+  curl -L "${url}" | tar -zx
+  install kiln /usr/local/bin
+popd

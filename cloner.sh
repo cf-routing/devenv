@@ -106,6 +106,10 @@ clone_if_not_exist "git@github.com:pivotal/app-connectivity-program-slackbot.git
 # Community bot (script to get recently updated Github issues)
 clone_if_not_exist "git@github.com:cf-routing/community-bot.git" "${HOME}/workspace/community-bot"
 
+# TAS Tiles
+clone_if_not_exist "git@github.com:pivotal-cf/p-runtime.git" "${HOME}/workspace/p-runtime"
+clone_if_not_exist "git@github.com:pivotal-cf/p-isolation-segment.git" "${HOME}/workspace/p-isolation-segment"
+
 cd ~/workspace
 
 echo "direnv allow all releases for all repos"
