@@ -110,6 +110,10 @@ clone_if_not_exist "git@github.com:cf-routing/community-bot.git" "${HOME}/worksp
 clone_if_not_exist "git@github.com:pivotal-cf/p-runtime.git" "${HOME}/workspace/p-runtime"
 clone_if_not_exist "git@github.com:pivotal-cf/p-isolation-segment.git" "${HOME}/workspace/p-isolation-segment"
 
+# Unpack utility for recursive untar/unzip. Useful for log files from support
+# TODO: switch back to upstream when PR is merged: https://github.com/stephendotcarter/unpack/pull/1
+clone_if_not_exist "git@github.com:mcwumbly/unpack.git" "${HOME}/workspace/unpack"
+
 cd ~/workspace
 
 echo "direnv allow all releases for all repos"
