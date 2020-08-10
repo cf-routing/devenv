@@ -158,7 +158,7 @@ curl -L https://k14s.io/install.sh | bash
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
-~/.fzf/install --key-bindings --completion --no-update-rc
+sudo ~/.fzf/install --key-bindings --completion --no-update-rc
 
 # istioctl
 mkdir /tmp/istio
