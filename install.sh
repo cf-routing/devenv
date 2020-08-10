@@ -157,8 +157,10 @@ pip3 install yq neovim when-changed
 curl -L https://k14s.io/install.sh | bash
 
 # fzf
+su - pivotal
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
-sudo ~/.fzf/install --key-bindings --completion --no-update-rc
+sudo /home/pivotal/.fzf/install --key-bindings --completion --no-update-rc
+exit
 
 # istioctl
 mkdir /tmp/istio
