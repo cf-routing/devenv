@@ -20,3 +20,5 @@ alias kcf="kubectl -n cf-system"
 complete -F __start_kubectl kcf
 alias kw="kubectl -n cf-workloads"
 complete -F __start_kubectl kw
+
+alias reload="source ~/.bash_profile"
