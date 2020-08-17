@@ -19,8 +19,8 @@ git config --global url."git@github.com:".pushInsteadOf "https://github.com/"
 # git aliases
 git config --global alias.last 'log -1 HEAD'
 
-git config --global alias.ci 'duet-commit -v'
-git config --global alias.cira 'duet-commit -v --amend --reset-author'
+git config --global alias.ci 'commit -v'
+git config --global alias.cira 'commit -v --amend --reset-author'
 git config --global alias.co 'checkout'
 git config --global alias.di 'diff'
 git config --global alias.st 'status'
