@@ -8,6 +8,7 @@ source "/home/pivotal/.asdf/asdf.sh"
 plugins=(
 'kustomize'
 'kind'
+'clusterctl'
 )
 
 for plugin in ${plugins[*]}
