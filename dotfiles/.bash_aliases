@@ -22,3 +22,5 @@ alias kw="kubectl -n cf-workloads"
 complete -F __start_kubectl kw
 
 alias reload="source ~/.bash_profile"
+
+alias vpn="sudo openconnect --no-dtls --protocol=gp gp-den2.vmware.com"
