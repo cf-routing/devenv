@@ -9,6 +9,7 @@ plugins=(
 'kustomize'
 'kind'
 'clusterctl'
+'fzf'
 )
 
 for plugin in ${plugins[*]}
