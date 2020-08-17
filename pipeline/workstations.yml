@@ -13,6 +13,15 @@ groups:
   - fox
 
 resources:
+- name: weekly-image
+  type: time
+  icon: clock
+  source:
+    location: America/Los_Angeles
+    start: 5:00 PM
+    stop: 5:10 PM
+    days: [Saturday]
+
 - name: saturday-night-fever
   type: time
   icon: clock
@@ -36,6 +45,8 @@ jobs:
   plan:
     - in_parallel:
       - get: devenv
+        trigger: true
+      - get: weekly-image
         trigger: true
     - task: build-vm
       file: devenv/pipeline/tasks/build_image_vm.yml
