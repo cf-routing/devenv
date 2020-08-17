@@ -175,4 +175,6 @@ forever() {
 # Add all our custom functions
 source ~/workspace/devenv/functions/*
 
+eval "$(direnv hook bash)"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
