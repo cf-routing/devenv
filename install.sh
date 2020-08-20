@@ -181,3 +181,16 @@ pushd /tmp/om
   curl -L "${url}" | tar -zx
   sudo install om /usr/local/bin/om
 popd
+
+# Overwrite /etc/resolv.conf
+# This is necessary because openconnect will want to overwrite the file when it
+# is connected to a vpn, which doesn't play nicely with systemd-resolved
+# because systemd-resolved can potentially overwrite the changes by openconnect
+# at any time without openconnect knowing. It is therefore, easier to only have
+# a single process attempt to change /etc/resolv.conf at any time.
+
+rm -f /etc/resolv.conf
+cat > /etc/resolv.conf <<EOF
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
