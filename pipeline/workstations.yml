@@ -7,6 +7,7 @@ groups:
   - ant
   - bee
   - canary
+  - cat
   - dodo
   - dog
   - elk
@@ -112,6 +113,18 @@ jobs:
       params:
         GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
         WORKSTATION_NAME: canary
+
+- name: cat
+  plan:
+    - in_parallel:
+      - get: saturday-night-fever
+        trigger: true
+      - get: devenv
+    - task: build-workstation
+      file: devenv/pipeline/tasks/build_workstation.yml
+      params:
+        GCP_SERVICE_ACCOUNT_KEY: ((shared_gcp_account_creds))
+        WORKSTATION_NAME: cat
 
 - name: dodo
   plan:
