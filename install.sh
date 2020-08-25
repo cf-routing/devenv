@@ -45,6 +45,7 @@ apt-get install -yq \
   ruby-dev \
   silversearcher-ag \
   software-properties-common \
+  shellcheck \
   tmux \
   tree \
   wget \
