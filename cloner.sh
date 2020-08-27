@@ -113,6 +113,15 @@ clone_if_not_exist "git@github.com:pivotal-cf/p-isolation-segment.git" "${HOME}/
 # Unpack utility for recursive untar/unzip. Useful for log files from support
 clone_if_not_exist "git@github.com:stephendotcarter/unpack.git" "${HOME}/workspace/unpack"
 
+# Docs repos (that we know about)
+clone_if_not_exist "git@github.com:cloudfoundry/docs-cf-admin.git" "${HOME}/workspace/docs-cf-admin"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-cloudfoundry-concepts.git" "${HOME}/workspace/docs-cloudfoundry-concepts"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-dev-guide" "${HOME}/workspace/docs-dev-guide"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-operating-pas.git" "${HOME}/workspace/docs-operating-pas"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-partials" "${HOME}/workspace/docs-partials"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-pcf-security" "${HOME}/workspace/docs-pcf-security"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-running-cf" "${HOME}/workspace/docs-running-cf"
+
 cd ~/workspace
 
 echo "direnv allow all releases for all repos"
