@@ -9,7 +9,6 @@ plugins=(
 'kustomize'
 'kind'
 'clusterctl'
-'fzf'
 )
 
 for plugin in ${plugins[*]}
@@ -23,3 +22,6 @@ do
   version=$(asdf list "${plugin}")
   echo "${plugin} ${version}" >> "/home/pivotal/.tool-versions"
 done
+
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
+/home/pivotal/.fzf/install --key-bindings --completion --no-update-rc
