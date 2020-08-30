@@ -49,6 +49,9 @@ clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-release" "${HO
 # Routing Release: BOSH Release home to the Gorouter, TCP router, and a bunch of other routing related things. Spelunk! Refactor!
 clone_if_not_exist "https://github.com/cloudfoundry/routing-release" "${HOME}/workspace/routing-release"
 
+# Used in routing-release/ci
+clone_if_not_exist "https://github.com/cf-routing/doctorroute.git" "${HOME}/workspace/doctorroute"
+
 # Silk release: BOSH Release of the Silk CNI plugin
 clone_if_not_exist "https://github.com/cloudfoundry/silk-release" "${HOME}/workspace/silk-release"
 
