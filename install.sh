@@ -160,7 +160,7 @@ curl -L https://k14s.io/install.sh | bash
 # istioctl
 mkdir /tmp/istio
 pushd /tmp/istio
-  curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.4 sh -
+  curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.8 sh -
   sudo mv istio-*/bin/istioctl /usr/local/bin
 popd
 
