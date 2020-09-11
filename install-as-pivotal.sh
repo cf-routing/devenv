@@ -25,3 +25,6 @@ done
 
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
 /home/pivotal/.fzf/install --key-bindings --completion --no-update-rc
+
+# go get stuff
+GOPATH="${HOME}/go" go get -u github.com/dbellotti/cf-target
