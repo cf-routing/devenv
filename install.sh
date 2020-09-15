@@ -69,7 +69,7 @@ mv go /usr/local
 rm -rf /tmp/installscratch
 
 # install user specific programs as pivotal
-sudo -u pivotal ./install-as-pivotal.sh
+sudo -u pivotal /home/pivotal/workspace/devenv/install-as-pivotal.sh
 
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
