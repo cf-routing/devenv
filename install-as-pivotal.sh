@@ -29,7 +29,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
 /home/pivotal/.fzf/install --key-bindings --completion --no-update-rc
 
 # go get stuff
-export GOPATH="${HOME}/go"
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/
 go get -u github.com/dbellotti/cf-target
 go get github.com/onsi/ginkgo/ginkgo
 go get github.com/onsi/gomega/...
