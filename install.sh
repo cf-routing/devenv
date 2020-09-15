@@ -9,6 +9,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
 apt-get install apt-utils
+apt-get update
 apt-get install -yq \
   apt-transport-https \
   aria2 \

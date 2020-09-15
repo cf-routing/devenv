@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /home/pivotal || exit 1
+
 # install asdf
 git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.7.8
 source "/home/pivotal/.asdf/asdf.sh"
