@@ -61,7 +61,7 @@ echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/
 apt-get update
 
 # install the rest
-apt-get install -yq azure-cli cf-cli cf7-cli
+apt-get install -yq azure-cli cf7-cli
 
 curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
 
