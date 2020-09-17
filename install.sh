@@ -65,6 +65,10 @@ apt-get install -yq azure-cli cf-cli cf7-cli
 
 curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
 
+# install eksctl
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+
 # install golang the right way
 mkdir -p /tmp/installscratch
 cd /tmp/installscratch
