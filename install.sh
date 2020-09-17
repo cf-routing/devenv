@@ -54,11 +54,16 @@ apt-get install -yq \
 
 sudo ln -s $(which fdfind) /usr/bin/fd
 
-# last update
+# add cf-clis
+wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+
 apt-get update
 
 # install the rest
-apt-get install -yq azure-cli
+apt-get install -yq azure-cli cf-cli cf7-cli
+
+curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
 
 # install golang the right way
 mkdir -p /tmp/installscratch
@@ -101,13 +106,6 @@ pushd /tmp/git-duet
   mv sshb0t /usr/local/bin/
 popd
 
-# cf
-mkdir /tmp/cf
-pushd /tmp/cf
-  curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
-  curl -o /usr/share/bash-completion/completions/cf https://raw.githubusercontent.com/cloudfoundry/cli/master/ci/installers/completion/cf
-  mv cf /usr/local/bin
-popd
 
 # bosh
 mkdir /tmp/bosh
