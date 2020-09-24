@@ -34,7 +34,7 @@ resources:
 
 - name: devenv
   type: git
-  icon: github-box
+  icon: github
   source:
     uri: git@github.com:cf-routing/devenv
     private_key: ((github_private_key.private_key))
