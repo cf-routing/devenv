@@ -134,3 +134,14 @@ cf_seed() {
   cf create-space -o o s
   cf target -o o -s s
 }
+
+cf4k8s_target() {
+  config_name=$(kubectl get configmaps -n cf-system -oname | grep cloud-controller-ng-yaml | tail -1)
+  domain="$(kubectl get -n cf-system "${config_name}" -oyaml | yq -r '.data["cloud_controller_ng.yml"]' | yq -r '.external_domain')"
+  password="$(kubectl get secrets -n cf-system -oyaml | grep 'admin|' | tail -1 | cut -d'|' -f2)"
+
+  cf api --skip-ssl-validation "https://${domain}"
+  cf auth "admin" "${password}"
+
+  cf_seed
+}
