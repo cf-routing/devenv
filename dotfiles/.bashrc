@@ -172,6 +172,18 @@ forever() {
   done
 }
 
+gimme_certs() {
+    local common_name;
+    common_name="${1:-fake}";
+    local ca_common_name;
+    ca_common_name="${2:-${common_name}_ca}";
+    local depot_path;
+    depot_path="${3:-fake_cert_stuff}";
+    certstrap --depot-path ${depot_path} init --passphrase '' --common-name "${ca_common_name}";
+    certstrap --depot-path ${depot_path} request-cert --passphrase '' --common-name "${common_name}" --domain "${common_name}";
+    certstrap --depot-path ${depot_path} sign --passphrase '' --CA "${ca_common_name}" "${common_name}"
+}
+
 # Add all our custom functions
 source <(cat ~/workspace/devenv/functions/*)
 

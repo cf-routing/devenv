@@ -185,6 +185,14 @@ pushd /tmp/om
   sudo install om /usr/local/bin/om
 popd
 
+# certstrap
+mkdir -p /tmp/certstrap
+pushd /tmp/certstrap
+  url=$(curl -s https://api.github.com/repos/square/certstrap/releases | jq -r '.[0].assets[] | select((.name | contains("linux"))).browser_download_url')
+  curl -L "${url}" --output certstrap
+  sudo install certstrap /usr/local/bin/certstrap
+popd
+
 # Overwrite /etc/resolv.conf
 # This is necessary because openconnect will want to overwrite the file when it
 # is connected to a vpn, which doesn't play nicely with systemd-resolved
