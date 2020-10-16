@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir workspace
+mkdir -p workspace
 cd workspace
 echo "Cloning the devenv scripts"
 git clone https://github.com/cf-routing/devenv.git

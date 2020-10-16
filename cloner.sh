@@ -16,8 +16,8 @@ clone_if_not_exist() {
 
 echo "Cloning all of the repos we work on..."
 
-mkdir ~/workspace
-mkdir ~/go
+mkdir -p ~/workspace
+mkdir -p ~/go
 
 
 echo "Cloning all of the repos we work on..."

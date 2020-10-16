@@ -102,8 +102,8 @@ pushd /tmp/git-duet
 popd
 
 # git-duet
-mkdir /tmp/git-duet
-pushd /tmp/git-duet
+mkdir -p /tmp/sshb0t
+pushd /tmp/sshb0t
   url=$(curl -s https://api.github.com/repos/genuinetools/sshb0t/releases | jq -r '.[0].assets[] | select(.name=="sshb0t-linux-amd64").browser_download_url')
   wget -O sshb0t $url
   chmod +x sshb0t
@@ -112,7 +112,7 @@ popd
 
 
 # bosh
-mkdir /tmp/bosh
+mkdir -p /tmp/bosh
 pushd /tmp/bosh
 url=$(curl -s https://api.github.com/repos/cloudfoundry/bosh-cli/releases | jq -r '.[0].assets[] | select(.name | contains("linux-amd64")).browser_download_url')
   wget -O bosh "$url"
@@ -121,7 +121,7 @@ url=$(curl -s https://api.github.com/repos/cloudfoundry/bosh-cli/releases | jq -
 popd
 
 # k9s
-mkdir /tmp/k9s
+mkdir -p /tmp/k9s
 pushd /tmp/k9s
 url=$(curl -s https://api.github.com/repos/derailed/k9s/releases | jq -r '.[0].assets[] | select(.name | contains("Linux_x86_64")).browser_download_url')
   wget -O k9s.tar.gz "$url"
@@ -160,7 +160,7 @@ pip3 install yq neovim when-changed
 curl -L https://k14s.io/install.sh | bash
 
 # istioctl
-mkdir /tmp/istio
+mkdir -p /tmp/istio
 pushd /tmp/istio
   curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.8 sh -
   sudo mv istio-*/bin/istioctl /usr/local/bin
