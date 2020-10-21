@@ -9,3 +9,7 @@
 " let g:lightline['colorscheme'] = 'wombat'
 " ...
 set notermguicolors
+
+augroup config#yml
+  autocmd FileType yaml EnableYtt
+augroup END
