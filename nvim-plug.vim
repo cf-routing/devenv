@@ -3,9 +3,6 @@
 " Plug '~/my-prototype-plugin'
 " ...
 
-" ytt/Starlark {
-Plug 'cappyzawa/starlark.vim'
 Plug 'cappyzawa/ytt.vim'
-" }
 
 
