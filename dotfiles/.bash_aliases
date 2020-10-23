@@ -24,3 +24,6 @@ complete -F __start_kubectl kw
 alias reload="source ~/.bash_profile"
 
 alias vpn="sudo openconnect --no-dtls --protocol=gp gp-den2.vmware.com"
+
+alias pbcopy="xclip -sel clip"
+alias pbpaste="xclip -o -sel clip"
