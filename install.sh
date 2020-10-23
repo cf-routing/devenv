@@ -50,6 +50,7 @@ apt-get install -yq \
   tmux \
   tree \
   wget \
+  xclip \
   zlib1g-dev \
 
 sudo ln -s $(which fdfind) /usr/bin/fd
