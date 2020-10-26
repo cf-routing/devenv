@@ -73,7 +73,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 # install golang the right way
 mkdir -p /tmp/installscratch
 cd /tmp/installscratch
-wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.15.3.linux-amd64.tar.gz
 tar -xvf go*
 rm -rf /usr/local/go
 mv go /usr/local
