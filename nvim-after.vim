@@ -10,6 +10,8 @@
 " ...
 set notermguicolors
 
-augroup config#yml
-  autocmd FileType yaml EnableYtt
-augroup END
+" TODO: fix EnableYtt on Ytt files
+" augroup config#yml
+"   autocmd FileType yaml EnableYtt
+"   autocmd BufLeave FileType yaml DisableYtt
+" augroup END
