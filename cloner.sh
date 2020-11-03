@@ -82,6 +82,9 @@ clone_if_not_exist "https://github.com/cloudfoundry-incubator/eirini" "${HOME}/w
 # Eirini BOSH Release
 clone_if_not_exist "https://github.com/cloudfoundry-community/eirini-bosh-release" "${HOME}/workspace/eirini-bosh-release"
 
+# Cross Cluster Connectivity (Kokoni)
+clone_if_not_exist "https://github.com/vmware-tanzu/cross-cluster-connectivity.git" "${HOME}/workspace/cross-cluster-connectivity"
+
 # Networking Program Checklists: Checklists (on-call, onboarding) and a kind of helpful wiki
 clone_if_not_exist "git@github.com:cloudfoundry/networking-program-checklists" "${HOME}/workspace/networking-program-checklists"
 
