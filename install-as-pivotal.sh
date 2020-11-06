@@ -11,6 +11,7 @@ plugins=(
 'kustomize'
 'kind'
 'clusterctl'
+'ruby'
 )
 
 for plugin in ${plugins[*]}
