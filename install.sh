@@ -159,9 +159,6 @@ pushd /tmp/istio
   sudo mv istio-*/bin/istioctl /usr/local/bin
 popd
 
-# uaac
-sudo gem install cf-uaac
-
 # kiln
 mkdir -p /tmp/kiln
 pushd /tmp/kiln
