@@ -3,7 +3,7 @@
 cd /home/pivotal || exit 1
 
 # install asdf
-git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.7.8
+git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.8.0
 source "/home/pivotal/.asdf/asdf.sh"
 
 # install asdf packages
@@ -13,11 +13,13 @@ plugins=(
 'clusterctl'
 'ruby'
 )
-
 for plugin in ${plugins[*]}
 do
   asdf plugin-add "${plugin}"
 done
+
+asdf plugin-add kubebuilder https://github.com/virtualstaticvoid/asdf-kubebuilder.git
+plugins+=('kubebuilder')
 
 for plugin in ${plugins[*]}
 do
