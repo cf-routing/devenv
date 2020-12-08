@@ -6,10 +6,11 @@ echo "Cloning the devenv scripts"
 git clone https://github.com/cf-routing/devenv.git
 
 cd devenv
+echo "Cloning our team project repos"
+./cloner.sh
 echo "Installing required packages and tools, you may be prompted for your sudo password."
 sudo ./install.sh
 ./configure.sh
-./cloner.sh
 ./gitconfig.sh
 cd ~
 

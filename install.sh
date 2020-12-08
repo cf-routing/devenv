@@ -7,6 +7,8 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
+workspace_path=/home/pivotal/workspace
+
 apt-get update
 apt-get install apt-utils
 apt-get update
@@ -195,3 +197,9 @@ cat > /etc/resolv.conf <<EOF
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
+
+# downloaded from https://drive.google.com/a/pivotal.io/file/d/1GxaJGgvoTapDjdq1J3qCkxRBAztIbtOQ/view?usp=sharing
+# also, see instructions at:
+# https://sites.google.com/a/pivotal.io/pivotal-it/office-equipment/networking/pivotal-vpn/global-protect#TOC-Linux-Installation
+dpkg -i "$workspace_path/tas-runtime/GlobalProtect_deb-5.1.0.0-101.deb"
+

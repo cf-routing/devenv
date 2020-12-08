@@ -130,12 +130,11 @@ clone_if_not_exist "git@github.com:cloudfoundry/docs-running-cf" "${HOME}/worksp
 
 # smith CLI for interacting with toolsmiths envs
 clone_if_not_exist "git@github.com:pivotal/smith" "${HOME}/workspace/smith"
+
+clone_if_not_exist "git@github.com:pivotal/tas-runtime" "${HOME}/workspace/tas-runtime"
+
 # Note: requires VPN access
-# Install GlobalProtect (not automated because we can't distribute file ourselves)
-# 1. Download https://drive.google.com/a/pivotal.io/file/d/1GxaJGgvoTapDjdq1J3qCkxRBAztIbtOQ/view?usp=sharing
-# 2. tar -xzvf PanGPLinux-5.1.0-c101.tgz
-# 3. gcloud beta compute scp --zone us-central1-a --project "cf-routing" GlobalProtect_deb-5.1.0.0-101.deb pivotal@${workstation}:~
-# 4. sudo dpkg -i GlobalProtect_deb-5.1.0.0-101.deb
+# Install GlobalProtect (automated in install.sh)
 #
 # Connect to VPN
 # 1. globalprotect connect --portal portal-nasa.vpn.pivotal.io -u ${username}
