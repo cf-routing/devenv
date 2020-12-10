@@ -47,7 +47,7 @@ go get github.com/davidrjenni/reftools/cmd/fillstruct
 go get github.com/rogpeppe/godef
 go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/lint/golint
-go get golang.org/x/tools/gopls
+GO111MODULE=on go get golang.org/x/tools/gopls@v0.5.4
 go get github.com/golangci/golangci-lint/cmd/golangci-lint
 go get github.com/fatih/gomodifytags
 go get golang.org/x/tools/cmd/gorename
