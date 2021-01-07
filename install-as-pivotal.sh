@@ -1,6 +1,15 @@
 #!/bin/bash
+set -euo pipefail
 
 cd /home/pivotal || exit 1
+
+# setup home bin
+mkdir -p "$HOME/bin"
+
+# fly
+wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=linux"
+chmod +x fly
+mv fly "$HOME/bin/"
 
 # install asdf
 git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.8.0

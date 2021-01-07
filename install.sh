@@ -138,11 +138,6 @@ wget https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/${c
 tar xzvf /tmp/credhub-linux-${credhub_cli_version}.tgz -C /usr/local/bin && \
 chmod +x /usr/local/bin/credhub
 
-# fly
-wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=linux"
-chmod +x fly
-mv fly /usr/local/bin
-
 # kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl

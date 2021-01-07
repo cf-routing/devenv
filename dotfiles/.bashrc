@@ -162,6 +162,7 @@ export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/:$HOME/
 export PATH=$PATH:$HOME/.istioctl/bin
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/bin"
 
 forever() {
   while [ 1 ]
