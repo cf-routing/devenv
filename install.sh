@@ -180,6 +180,21 @@ pushd /tmp/certstrap
   sudo install certstrap /usr/local/bin/certstrap
 popd
 
+# ctlptl
+mkdir -p /tmp/ctlptl
+pushd /tmp/ctlptl
+  ctlptl_version="0.4.1"
+  url="https://github.com/tilt-dev/ctlptl/releases/download/v${ctlptl_version}/ctlptl.${ctlptl_version}.linux.x86_64.tar.gz"
+  curl -L "${url}" | tar -zx
+  sudo mv ctlptl /usr/local/bin/ctltptl
+popd
+
+# tilt
+curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
+# avoid conflicts with tilt ruby package
+sudo mv /usr/local/bin/tilt /usr/local/bin/tlt
+
+
 # Overwrite /etc/resolv.conf
 # This is necessary because openconnect will want to overwrite the file when it
 # is connected to a vpn, which doesn't play nicely with systemd-resolved
