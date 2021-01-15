@@ -40,7 +40,6 @@ apt-get install -yq \
   libssl-dev \
   libyaml-dev \
   lsb-release \
-  mosh \
   npm \
   openconnect \
   python3-pip \
@@ -54,7 +53,7 @@ apt-get install -yq \
   xclip \
   zlib1g-dev \
 
-sudo ln -s $(which fdfind) /usr/bin/fd
+sudo ln -s "$(which fdfind)" /usr/bin/fd
 
 # add cf-clis
 wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
@@ -74,7 +73,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 # install golang the right way
 mkdir -p /tmp/installscratch
 cd /tmp/installscratch
-wget https://dl.google.com/go/go1.15.3.linux-amd64.tar.gz
+wget "https://dl.google.com/go/$(curl https://golang.org/VERSION?m=text).linux-amd64.tar.gz"
 tar -xvf go*
 rm -rf /usr/local/go
 mv go /usr/local
@@ -115,16 +114,6 @@ url=$(curl -s https://api.github.com/repos/cloudfoundry/bosh-cli/releases | jq -
   mv bosh /usr/local/bin/
 popd
 
-# k9s
-mkdir -p /tmp/k9s
-pushd /tmp/k9s
-url=$(curl -s https://api.github.com/repos/derailed/k9s/releases | jq -r '.[0].assets[] | select(.name | contains("Linux_x86_64")).browser_download_url')
-  wget -O k9s.tar.gz "$url"
-  tar -xvf k9s.tar.gz
-  chmod +x k9s
-  mv k9s /usr/local/bin/
-popd
-
 # bbl
 bbl_version="8.4.0"
 wget https://github.com/cloudfoundry/bosh-bootloader/releases/download/v${bbl_version}/bbl-v${bbl_version}_linux_x86-64 -P /tmp && \
@@ -138,23 +127,8 @@ wget https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/${c
 tar xzvf /tmp/credhub-linux-${credhub_cli_version}.tgz -C /usr/local/bin && \
 chmod +x /usr/local/bin/credhub
 
-# kubectl
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv kubectl /usr/local/bin/kubectl
-
 # pip3 things
 pip3 install yq neovim when-changed
-
-# k14s
-curl -L https://k14s.io/install.sh | bash
-
-# istioctl
-mkdir -p /tmp/istio
-pushd /tmp/istio
-  curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.8 sh -
-  sudo mv istio-*/bin/istioctl /usr/local/bin
-popd
 
 # kiln
 mkdir -p /tmp/kiln
@@ -180,20 +154,6 @@ pushd /tmp/certstrap
   sudo install certstrap /usr/local/bin/certstrap
 popd
 
-# ctlptl
-mkdir -p /tmp/ctlptl
-pushd /tmp/ctlptl
-  ctlptl_version="0.4.1"
-  url="https://github.com/tilt-dev/ctlptl/releases/download/v${ctlptl_version}/ctlptl.${ctlptl_version}.linux.x86_64.tar.gz"
-  curl -L "${url}" | tar -zx
-  sudo mv ctlptl /usr/local/bin/ctltptl
-popd
-
-# tilt
-curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
-# avoid conflicts with tilt ruby package
-sudo mv /usr/local/bin/tilt /usr/local/bin/tlt
-
 
 # Overwrite /etc/resolv.conf
 # This is necessary because openconnect will want to overwrite the file when it
@@ -211,5 +171,4 @@ EOF
 # downloaded from https://drive.google.com/a/pivotal.io/file/d/1GxaJGgvoTapDjdq1J3qCkxRBAztIbtOQ/view?usp=sharing
 # also, see instructions at:
 # https://sites.google.com/a/pivotal.io/pivotal-it/office-equipment/networking/pivotal-vpn/global-protect#TOC-Linux-Installation
-dpkg -i "$workspace_path/tas-runtime/GlobalProtect_deb-5.1.0.0-101.deb"
-
+# dpkg -i "$workspace_path/tas-runtime/GlobalProtect_deb-5.1.0.0-101.deb"

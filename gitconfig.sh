@@ -4,7 +4,7 @@
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 echo "Symlink the git-authors file to .git-authors..."
-ln -sf ${HOME}/workspace/networking-workspace/git-authors ${HOME}/.git-authors
+ln -sf "${HOME}/workspace/devenv/git-authors" "${HOME}/.git-authors"
 
 echo "updating all git repos to use 'git co-author'"
 git duet as kds # HACK: if not set to anything git duet fails in the following commands
