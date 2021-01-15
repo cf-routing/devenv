@@ -6,7 +6,7 @@ devenvDir="${workspaceDir}/devenv"
 if [[ ! -d "${devenvDir}" ]]; then
     mkdir -p "${workspaceDir}"
     printf "devenv not found.\nCloning the devenv scripts\n"
-    git clone https://github.com/cf-routing/devenv.git "${devenvDir}"
+    git clone "https://github.com/cf-routing/devenv.git" "${devenvDir}"
 fi
 
 echo "Cloning our team project repos"
