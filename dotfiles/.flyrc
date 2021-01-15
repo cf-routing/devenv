@@ -1,0 +1,22 @@
+targets:
+  runtime:
+    api: https://ci.funtime.lol
+    team: main
+  denver:
+    api: https://concourse.cf-denver.com
+    team: loggregator
+  diego:
+    api: https://diego.ci.cf-app.com
+    team: main
+  diego-lts:
+    api: https://hush-house.pivotal.io
+    team: diego
+  loggregator:
+    api: https://concourse.cf-denver.com
+    team: loggregator
+  net:
+    api: https://networking.ci.cf-app.com
+    team: ga
+  net-lts:
+    api: https://ci.networking.family
+    team: ga

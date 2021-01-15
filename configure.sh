@@ -34,9 +34,6 @@ echo "set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock" >> "${HOME}/.tmux
 echo "set -g update-environment -r" >> ~/.tmux.conf
 
 # install bash profile
-shopt -s dotglob
+shopt -s dotglob # do NOT quote the expansion of the dotfiles
 rm -f "${HOME}/.bash_aliases" "${HOME}/.bash_logout" "${HOME}/.bash_profile" "${HOME}/.bashrc" "${HOME}/.profile"
-ln -s "${DIR}/dotfiles/*" "${HOME}/"
-
-# fly aliases
-ln -s "${HOME}/workspace/networking-workspace/flyrc" "${HOME}/.flyrc"
+ln -sf ${DIR}/dotfiles/* "${HOME}/"
