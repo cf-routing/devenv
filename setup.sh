@@ -9,7 +9,6 @@ if [[ ! -d "${devenvDir}" ]]; then
     git clone https://github.com/cf-routing/devenv.git "${devenvDir}"
 fi
 
-cd devenv
 echo "Cloning our team project repos"
 "${devenvDir}/cloner.sh"
 
