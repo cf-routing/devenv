@@ -19,16 +19,12 @@ source "/home/pivotal/.asdf/asdf.sh"
 plugins=(
 'kustomize'
 'kind'
-'clusterctl'
 'ruby'
 )
 for plugin in ${plugins[*]}
 do
   asdf plugin-add "${plugin}"
 done
-
-asdf plugin-add kubebuilder https://github.com/virtualstaticvoid/asdf-kubebuilder.git
-plugins+=('kubebuilder')
 
 for plugin in ${plugins[*]}
 do
