@@ -14,13 +14,6 @@ alias diff="diff --color"
 
 alias t="target"
 
-alias kis="kubectl -n istio-system"
-complete -F __start_kubectl kis
-alias kcf="kubectl -n cf-system"
-complete -F __start_kubectl kcf
-alias kw="kubectl -n cf-workloads"
-complete -F __start_kubectl kw
-
 alias reload="source ~/.bash_profile"
 
 alias vpn="sudo openconnect --no-dtls --protocol=gp gp-den2.vmware.com"
