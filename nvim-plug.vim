@@ -2,7 +2,3 @@
 " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug '~/my-prototype-plugin'
 " ...
-
-Plug 'cappyzawa/ytt.vim'
-
-
