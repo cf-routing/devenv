@@ -58,9 +58,6 @@ clone_if_not_exist "git@github.com:pivotal/smith" "${HOME}/workspace/smith"
 
 
 # networking
-# networking-workspace: you might already have this but who knows
-clone_if_not_exist "https://github.com/cloudfoundry/networking-workspace.git" "${HOME}/workspace/networking-workspace"
-
 # NATS Release: Inherited from Release Integration. We now own this release, which deploys NATS, which is used in CF
 clone_if_not_exist "https://github.com/cloudfoundry/nats-release" "${GOPATH}/src/code.cloudfoundry.org/nats-release"
 
