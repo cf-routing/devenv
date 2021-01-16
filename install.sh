@@ -111,6 +111,8 @@ pushd /tmp/bbl
 popd
 
 #credhub cli
+mkdir -p /tmp/credhub-cli
+pushd /tmp/credhub-cli
   url="$(curl -s https://api.github.com/repos/cloudfoundry-incubator/credhub-cli/releases | jq -r '.[0].assets[] | select((.name | contains("linux")) and (.name | contains("tgz"))).browser_download_url')"
   curl -L "${url}" | tar -zx
   install credhub /usr/local/bin/credhub
@@ -138,7 +140,7 @@ popd
 # certstrap
 mkdir -p /tmp/certstrap
 pushd /tmp/certstrap
-  url=$(curl -s https://api.github.com/repos/square/certstrap/releases | jq -r '.[0].assets[] | select((.name | contains("linux"))).browser_download_url')
+  url="$(curl -s https://api.github.com/repos/square/certstrap/releases | jq -r '.[0].assets[] | select((.name | contains("linux"))).browser_download_url')"
   curl -L "${url}" -o certstrap
   install certstrap /usr/local/bin/certstrap
 popd
