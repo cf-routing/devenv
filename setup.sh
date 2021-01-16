@@ -16,7 +16,6 @@ echo "Installing required packages and tools, you may be prompted for your sudo 
 sudo "${devenvDir}/install.sh"
 "${devenvDir}/configure.sh"
 "${devenvDir}/gitconfig.sh"
-cd
 
 echo "All done! Disconnect and log back in to ensure you have everything."
 echo "Some repositories can't be cloned without a private key, install your identity (with pivotal_login or similar) and run ${devenvDir}/cloner.sh to get the rest."
