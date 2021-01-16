@@ -4,12 +4,12 @@ set -euo pipefail
 cd /home/pivotal || exit 1
 
 # setup home bin
-mkdir -p "$HOME/bin"
+homeBinPath="${HOME}/bin"
+mkdir -p "${homeBinPath}"
 
 # fly
-wget -O fly "https://networking.ci.cf-app.com/api/v1/cli?arch=amd64&platform=linux"
-chmod +x fly
-mv fly "$HOME/bin/"
+curl -L "https://ci.funtime.lol/api/v1/cli?arch=amd64&platform=linux" -o fly
+install fly "${homeBinPath}"
 
 # install asdf
 git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.8.0
@@ -38,7 +38,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
 
 # go get stuff
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:/home/xander/.local/bin:$HOME/go/bin/
+export PATH=$PATH:/usr/local/go/bin:/home/pivotal/.local/bin:$HOME/go/bin/
 go get -u github.com/dbellotti/cf-target
 go get github.com/onsi/ginkgo/ginkgo
 go get github.com/onsi/gomega/...
