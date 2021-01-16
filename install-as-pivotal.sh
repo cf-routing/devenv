@@ -17,8 +17,6 @@ source "/home/pivotal/.asdf/asdf.sh"
 
 # install asdf packages
 plugins=(
-'kustomize'
-'kind'
 'ruby'
 )
 for plugin in ${plugins[*]}
