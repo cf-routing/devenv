@@ -160,7 +160,7 @@ EOF
 # downloaded from https://drive.google.com/a/pivotal.io/file/d/1GxaJGgvoTapDjdq1J3qCkxRBAztIbtOQ/view?usp=sharing
 # also, see instructions at:
 # https://sites.google.com/a/pivotal.io/pivotal-it/office-equipment/networking/pivotal-vpn/global-protect#TOC-Linux-Installation
-gpDebPath="${HOME}/GlobalProtect_deb-*.deb"
-if compgen -G "${gpDebPath}" > /dev/null; then
+gpDebPath="/home/pivotal/GlobalProtect_deb-*.deb"
+if compgen -G "${gpDebPath}"; then
     dpkg -i "${gpDebPath}"
 fi
