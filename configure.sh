@@ -12,6 +12,7 @@ curl -fLo "${HOME}/.vim/autoload/plug.vim" --create-dirs \
 mkdir -p "${HOME}/.config/nvim"
 git clone "https://github.com/luan/nvim.git" "${HOME}/.config/nvim"
 nvim +PlugInstall +qall
+nvim +ConfigInstallLanguageServers +qall
 nvim +UpdateRemotePlugins +qall
 nvim +GoInstallBinaries +qall
 
