@@ -120,11 +120,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# kubectl completion and alias
-source <(kubectl completion bash)
-alias k=kubectl
-complete -F __start_kubectl k
-
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \

@@ -3,7 +3,6 @@
 target() {
   gobosh_target "${@}"
   cf_target "${@}"
-  gke_target "${@}"
 }
 
 gobosh_untarget() {
@@ -84,33 +83,6 @@ cf_target() {
   cf_seed
 }
 
-function gke_target() {
-  local line="$(gcloud container clusters list 2>/dev/null | grep "$1")"
-  local name="$(echo "${line}" | awk '{print $1}')"
-  local zone="$(echo "${line}" | awk '{print $2}')"
-
-  if [ -z "${name}" ]; then
-    return
-  fi
-
-  gcloud container clusters get-credentials "${name}" --zone "${zone}"
-}
-
-# https://github.com/cloudfoundry/networking-workspace/blob/master/target-completion.bash#L24
-function _gke_target_completion() {
-  if [ "${#COMP_WORDS[@]}" != "2" ]; then
-    return
-  fi
-
-  local clusters="$(gcloud container clusters list 2>/dev/null | grep RUNNING | awk '{print $1}')"
-
-  local cur=${COMP_WORDS[COMP_CWORD]}
-
-  COMPREPLY=($(compgen -W "${clusters}" -- $cur))
-}
-
-complete -o nospace -F _gke_target_completion gke_target
-
 lookup_env() {
   local name=${1}
 
@@ -133,15 +105,4 @@ cf_seed() {
   cf create-org o
   cf create-space -o o s
   cf target -o o -s s
-}
-
-cf4k8s_target() {
-  config_name=$(kubectl get configmaps -n cf-system -oname | grep cloud-controller-ng-yaml | tail -1)
-  domain="$(kubectl get -n cf-system "${config_name}" -oyaml | yq -r '.data["cloud_controller_ng.yml"]' | yq -r '.external_domain')"
-  password="$(kubectl get secrets -n cf-system -oyaml | grep 'admin|' | tail -1 | cut -d'|' -f2)"
-
-  cf api --skip-ssl-validation "https://${domain}"
-  cf auth "admin" "${password}"
-
-  cf_seed
 }
