@@ -64,6 +64,9 @@ clone_if_not_exist "https://github.com/cloudfoundry/nats-release" "${GOPATH}/src
 # CF Networking Release: BOSH release for policy-based container networking in Cloud Foundry
 clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-release" "${HOME}/workspace/cf-networking-release"
 
+# cf-networking-helpers: contains various helper tools used in cf-networking and silk releases
+clone_if_not_exist "https://github.com/cloudfoundry/cf-networking-helpers.git" "${HOME}/workspace/cf-networking-helpers"
+
 # Routing Release: BOSH Release home to the Gorouter, TCP router, and a bunch of other routing related things. Spelunk! Refactor!
 clone_if_not_exist "https://github.com/cloudfoundry/routing-release" "${HOME}/workspace/routing-release"
 
