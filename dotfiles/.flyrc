@@ -1,7 +1,4 @@
 targets:
-  runtime:
-    api: https://ci.funtime.lol
-    team: main
   denver:
     api: https://concourse.cf-denver.com
     team: loggregator
@@ -20,3 +17,6 @@ targets:
   net-lts:
     api: https://ci.networking.family
     team: ga
+  runtime:
+    api: https://ci.funtime.lol
+    team: main
