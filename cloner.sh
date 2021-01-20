@@ -105,6 +105,41 @@ clone_if_not_exist "git@github.com:cf-routing/community-bot.git" "${HOME}/worksp
 
 
 
+# Diego
+clone_if_not_exist "git@github.com:cloudfoundry/deployments-diego.git"             "${HOME}/workspace/deployments-diego"
+clone_if_not_exist "git@github.com:cloudfoundry/diego-team.git"                    "${HOME}/workspace/diego-team"
+clone_if_not_exist "https://github.com/cloudfoundry/diego-release"                 "${HOME}/workspace/diego-release"
+clone_if_not_exist "https://github.com/cloudfoundry/archiver"                      "${HOME}/workspace/archiver"
+clone_if_not_exist "https://github.com/cloudfoundry/auction"                       "${HOME}/workspace/auction"
+clone_if_not_exist "https://github.com/cloudfoundry/auctioneer"                    "${HOME}/workspace/auctioneer"
+clone_if_not_exist "https://github.com/cloudfoundry/bbs"                           "${HOME}/workspace/bbs"
+clone_if_not_exist "https://github.com/cloudfoundry/benchmarkbbs"                  "${HOME}/workspace/benchmarkbbs"
+clone_if_not_exist "https://github.com/cloudfoundry/bytefmt"                       "${HOME}/workspace/bytefmt"
+clone_if_not_exist "https://github.com/cloudfoundry/cacheddownloader"              "${HOME}/workspace/cacheddownloader"
+clone_if_not_exist "https://github.com/cloudfoundry/certsplitter"                  "${HOME}/workspace/certsplitter"
+clone_if_not_exist "https://github.com/cloudfoundry/cfdot"                         "${HOME}/workspace/cfdot"
+clone_if_not_exist "https://github.com/cloudfoundry/cfhttp"                        "${HOME}/workspace/cfhttp"
+clone_if_not_exist "https://github.com/cloudfoundry/clock"                         "${HOME}/workspace/clock"
+clone_if_not_exist "https://github.com/cloudfoundry/debugserver"                   "${HOME}/workspace/debugserver"
+clone_if_not_exist "https://github.com/cloudfoundry/diego-logging-client"          "${HOME}/workspace/diego-logging-client"
+clone_if_not_exist "https://github.com/cloudfoundry/diego-ssh"                     "${HOME}/workspace/diego-ssh"
+clone_if_not_exist "https://github.com/cloudfoundry/diego-upgrade-stability-tests" "${HOME}/workspace/diego-upgrade-stability-tests"
+clone_if_not_exist "https://github.com/cloudfoundry/dockerapplifecycle"	           "${HOME}/workspace/dockerapplifecycle"
+clone_if_not_exist "https://github.com/cloudfoundry/durationjson"                  "${HOME}/workspace/durationjson"
+clone_if_not_exist "https://github.com/cloudfoundry/executor"                      "${HOME}/workspace/executor"
+clone_if_not_exist "https://github.com/cloudfoundry/fileserver"                    "${HOME}/workspace/fileserver"
+clone_if_not_exist "https://github.com/cloudfoundry/healthcheck"                   "${HOME}/workspace/healthcheck"
+clone_if_not_exist "https://github.com/cloudfoundry/inigo"                         "${HOME}/workspace/inigo"
+clone_if_not_exist "https://github.com/cloudfoundry/lager"                         "${HOME}/workspace/lager"
+clone_if_not_exist "https://github.com/cloudfoundry/localip"                       "${HOME}/workspace/localip"
+clone_if_not_exist "https://github.com/cloudfoundry/locket"                        "${HOME}/workspace/locket"
+clone_if_not_exist "https://github.com/cloudfoundry/rep"                           "${HOME}/workspace/rep"
+clone_if_not_exist "https://github.com/cloudfoundry/route-emitter"                 "${HOME}/workspace/route-emitter"
+clone_if_not_exist "https://github.com/cloudfoundry/vizzini"                       "${HOME}/workspace/vizzini"
+clone_if_not_exist "https://github.com/cloudfoundry/workpool"                      "${HOME}/workspace/workpool"
+
+
+
 # Docs repos (that we know about)
 clone_if_not_exist "git@github.com:cloudfoundry/docs-cf-admin.git" "${HOME}/workspace/docs-cf-admin"
 clone_if_not_exist "git@github.com:cloudfoundry/docs-cloudfoundry-concepts.git" "${HOME}/workspace/docs-cloudfoundry-concepts"
