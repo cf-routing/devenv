@@ -138,16 +138,58 @@ clone_if_not_exist "https://github.com/cloudfoundry/route-emitter"              
 clone_if_not_exist "https://github.com/cloudfoundry/vizzini"                       "${HOME}/workspace/vizzini"
 clone_if_not_exist "https://github.com/cloudfoundry/workpool"                      "${HOME}/workspace/workpool"
 
+# Garden
+clone_if_not_exist "https://github.com/cloudfoundry/garden-runc-release"        "${HOME}/workspace/garden-runc-release"
+
+# Logging & Metrics
+clone_if_not_exist "https://github.com/cloudfoundry/cf-drain-cli"                  "${HOME}/workspace/cf-drain-cli"
+clone_if_not_exist "https://github.com/cloudfoundry/go-log-cache"                  "${HOME}/workspace/go-log-cache"
+clone_if_not_exist "https://github.com/cloudfoundry/go-loggregator"                "${HOME}/workspace/go-loggregator"
+clone_if_not_exist "https://github.com/cloudfoundry/log-cache-cli"                 "${HOME}/workspace/log-cache-cli"
+clone_if_not_exist "https://github.com/cloudfoundry/log-cache-release"             "${HOME}/workspace/log-cache-release"
+clone_if_not_exist "https://github.com/cloudfoundry/loggregator-agent-release"     "${HOME}/workspace/loggregator-agent-release"
+clone_if_not_exist "https://github.com/cloudfoundry/loggregator-api"               "${HOME}/workspace/loggregator-api"
+clone_if_not_exist "https://github.com/cloudfoundry/loggregator-release"           "${HOME}/workspace/loggregator-release"
+clone_if_not_exist "https://github.com/cloudfoundry-incubator/loggregator-tools"   "${HOME}/workspace/loggregator-tools"
+clone_if_not_exist "https://github.com/cloudfoundry/syslog-release"                "${HOME}/workspace/syslog-release"
+clone_if_not_exist "https://github.com/cloudfoundry/bosh-system-metrics-forwarder" "${HOME}/workspace/bosh-system-metrics-forwarder"
+clone_if_not_exist "https://github.com/cloudfoundry/bosh-system-metrics-server"    "${HOME}/workspace/bosh-system-metrics-server"
+clone_if_not_exist "https://github.com/cloudfoundry/go-metric-registry"            "${HOME}/workspace/go-metric-registry"
+clone_if_not_exist "https://github.com/cloudfoundry/metrics-discovery-release"     "${HOME}/workspace/metrics-discovery-release"
+clone_if_not_exist "git@github.com:pivotal-cf/metric-registrar-cli"                "${HOME}/workspace/metric-registrar-cli"
+clone_if_not_exist "git@github.com:pivotal-cf/metric-registrar-deployments"        "${HOME}/workspace/metric-registrar-deployments"
+clone_if_not_exist "git@github.com:pivotal-cf/metric-registrar-release"            "${HOME}/workspace/metric-registrar-release"
+
+
+# Logging & Metrics to deprecate (maybe)
+clone_if_not_exist "https://github.com/cloudfoundry/loggregator-ci"                 "${HOME}/workspace/loggregator-ci"
+clone_if_not_exist "https://github.com/cloudfoundry/noisy-neighbor-nozzle"          "${HOME}/workspace/noisy-neighbor-nozzle"
+clone_if_not_exist "https://github.com/cloudfoundry/deployments-loggregator"        "${HOME}/workspace/deployments-loggregator"
+clone_if_not_exist "https://github.com/cloudfoundry/service-metrics-release"        "${HOME}/workspace/service-metrics-release"
+clone_if_not_exist "https://github.com/cloudfoundry/statsd-injector-release"        "${HOME}/workspace/statsd-injector-release"
+clone_if_not_exist "https://github.com/cloudfoundry/system-metrics-release"         "${HOME}/workspace/system-metrics-release"
+clone_if_not_exist "https://github.com/cloudfoundry/system-metrics-scraper-release" "${HOME}/workspace/system-metrics-scraper-release"
+
+
+# Autoscaling & Scheduler
+clone_if_not_exist "git@github.com:pivotal-cf/cf-autoscaling-release"              "${HOME}/workspace/cf-autoscaling-release"
+clone_if_not_exist "git@github.com:pivotal-cf/pcf-scheduler-release"               "${HOME}/workspace/pcf-scheduler-release"
+clone_if_not_exist "git@github.com:pivotal-cf/pcf-scheduler-deployments"           "${HOME}/workspace/pcf-scheduler-deployments"
+clone_if_not_exist "git@github.com:pivotal-cf/p-scheduler"                         "${HOME}/workspace/p-scheduler"
 
 
 # Docs repos (that we know about)
-clone_if_not_exist "git@github.com:cloudfoundry/docs-cf-admin.git" "${HOME}/workspace/docs-cf-admin"
-clone_if_not_exist "git@github.com:cloudfoundry/docs-cloudfoundry-concepts.git" "${HOME}/workspace/docs-cloudfoundry-concepts"
-clone_if_not_exist "git@github.com:cloudfoundry/docs-dev-guide" "${HOME}/workspace/docs-dev-guide"
-clone_if_not_exist "git@github.com:pivotal-cf/docs-operating-pas.git" "${HOME}/workspace/docs-operating-pas"
-clone_if_not_exist "git@github.com:pivotal-cf/docs-partials" "${HOME}/workspace/docs-partials"
-clone_if_not_exist "git@github.com:pivotal-cf/docs-pcf-security" "${HOME}/workspace/docs-pcf-security"
-clone_if_not_exist "git@github.com:cloudfoundry/docs-running-cf" "${HOME}/workspace/docs-running-cf"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-cf-admin.git"                 "${HOME}/workspace/docs-cf-admin"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-cloudfoundry-concepts.git"    "${HOME}/workspace/docs-cloudfoundry-concepts"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-dev-guide"                    "${HOME}/workspace/docs-dev-guide"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-operating-pas.git"              "${HOME}/workspace/docs-operating-pas"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-partials"                       "${HOME}/workspace/docs-partials"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-pcf-security"                   "${HOME}/workspace/docs-pcf-security"
+clone_if_not_exist "git@github.com:cloudfoundry/docs-running-cf"                   "${HOME}/workspace/docs-running-cf"
+clone_if_not_exist "https://github.com/cloudfoundry/docs-loggregator"              "${HOME}/workspace/docs-loggregator"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-metric-registrar"               "${HOME}/workspace/docs-metric-registrar"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-scheduler.git"                  "${HOME}/workspace/docs-scheduler"
+clone_if_not_exist "git@github.com:pivotal-cf/docs-pcf-pws.git"                    "${HOME}/workspace/docs-pcf-pws"
 
 
 # Note: requires VPN access
