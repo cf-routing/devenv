@@ -88,6 +88,9 @@ clone_if_not_exist "https://github.com/cloudfoundry/routing-api" "${HOME}/worksp
 # Routing Acceptance Tests
 clone_if_not_exist "https://github.com/cloudfoundry/routing-acceptance-tests" "${HOME}/workspace/routing-acceptance-tests"
 
+# Routing Perf Release
+clone_if_not_exist "https://github.com/cloudfoundry/routing-perf-release" "${HOME}/workspace/routing-perf-release"
+
 # Networking OSS Deployments
 clone_if_not_exist "git@github.com:cloudfoundry/networking-oss-deployments.git" "${HOME}/workspace/networking-oss-deployments"
 
