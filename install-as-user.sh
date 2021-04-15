@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-cd /home/pivotal || exit 1
+cd $HOME || exit 1
 
 # setup home bin
 mkdir -p "$HOME/bin"
@@ -12,8 +12,8 @@ chmod +x fly
 mv fly "$HOME/bin/"
 
 # install asdf
-git clone https://github.com/asdf-vm/asdf.git /home/pivotal/.asdf --branch v0.8.0
-source "/home/pivotal/.asdf/asdf.sh"
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.8.0
+source "$HOME/.asdf/asdf.sh"
 
 # install asdf packages
 plugins=(
@@ -34,11 +34,11 @@ for plugin in ${plugins[*]}
 do
   asdf install "${plugin}" latest
   version=$(asdf list "${plugin}")
-  echo "${plugin} ${version}" >> "/home/pivotal/.tool-versions"
+  echo "${plugin} ${version}" >> "$HOME/.tool-versions"
 done
 
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/pivotal/.fzf
-/home/pivotal/.fzf/install --key-bindings --completion --no-update-rc
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install --key-bindings --completion --no-update-rc
 
 # go get stuff
 export GOPATH=$HOME/go

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+USERNAME=$(whoami)
+echo "Installing as $USERNAME"
+
 mkdir -p workspace
 cd workspace
 echo "Cloning the devenv scripts"
@@ -9,7 +12,7 @@ cd devenv
 echo "Cloning our team project repos"
 ./cloner.sh
 echo "Installing required packages and tools, you may be prompted for your sudo password."
-sudo ./install.sh
+sudo ./install.sh $USERNAME
 ./configure.sh
 ./gitconfig.sh
 cd ~

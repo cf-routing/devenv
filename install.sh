@@ -5,9 +5,11 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit
 fi
 
+USERNAME=$1
+
 export DEBIAN_FRONTEND=noninteractive
 
-workspace_path=/home/pivotal/workspace
+workspace_path=/home/$USERNAME/workspace
 
 apt-get update
 apt-get install -yq apt-utils
@@ -80,8 +82,8 @@ rm -rf /usr/local/go
 mv go /usr/local
 rm -rf /tmp/installscratch
 
-# install user specific programs as pivotal
-sudo -u pivotal /home/pivotal/workspace/devenv/install-as-pivotal.sh
+# install user specific programs as $USERNAME
+sudo -u $USERNAME /home/$USERNAME/workspace/devenv/install-as-user.sh
 
 # neovim
 sudo snap install nvim --classic
