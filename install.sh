@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 workspace_path=/home/pivotal/workspace
 
 apt-get update
-apt-get install apt-utils
+apt-get install -yq apt-utils
 apt-get update
 apt-get install -yq \
   apt-transport-https \
